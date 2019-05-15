@@ -1,16 +1,24 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Archive from "./pages/Archive";
+import NewItems from "./pages/FrontPage";
+import Navbar from "./components/Navbar/index.js";
+import Jumbotron from "./components/Jumbotron";
+import FullScreenDialog from "./components/Dialog"; 
+
 
 function App() {
     return (
         <Router>
             <div>
-                <h1>Heads UP</h1>
-                {/* <Nav /> */}
+                <Navbar/>
+                <Jumbotron>
+                 <h1>Merch Search</h1>
+                 </Jumbotron>
+               
                 <Switch>
-
                     <Route exact path="/archive" component={Archive} />
+                    <Route exact path="/" component={NewItems} />
                 </Switch>
             </div>
         </Router>

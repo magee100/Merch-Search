@@ -6,7 +6,7 @@ import { List, ListItem } from "../components/Lists";
 
 class Archive extends Component {
     state = {
-        items: []
+        items: [],
     };
 
     componentDidMount() {
@@ -24,13 +24,13 @@ class Archive extends Component {
     render() {
         return (
             <Container fluid>
-            <h1>AHHHHHHHHH</h1>
+            <h1>Merch Archive</h1>
 
                 {this.state.items.length ? (
                     <List>
                         {this.state.items.map(item => (
                             <ListItem key={item._id}>
-                            {item.artist} | {item.type | item.desc} | {item.color} | {item.brand} | {item.photo} | {item.date}
+                            {item.artist} | {item.type} | {item.desc} | {item.color} | {item.brand} |{item.photo} | {item.date}
                             </ListItem>
                         ))}
                     </List>

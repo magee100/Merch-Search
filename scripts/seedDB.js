@@ -16,6 +16,15 @@ const itemSeed =[
         photo: "https://imgur.com/a/edXjaN3",
         date: new Date(Date.now())
     },
+    {
+      artist: "Arust",
+      type: "Shirt",
+      desc: "Paradise in Brick / Spray paint Tiger",
+      color: "Kelly Green",
+      brand: "Gildan",
+      photo: "https://imgur.com/a/edXjaN3",
+      date: new Date(Date.now())
+  },
 ];
 
 db.Item
