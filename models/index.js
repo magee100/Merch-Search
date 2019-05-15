@@ -1,3 +1,3 @@
 module.exports = {
-    Item: require("./item")
+    Item: require("./archiveItem")
 };

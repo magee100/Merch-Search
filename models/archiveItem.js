@@ -8,8 +8,9 @@ const itemSchema = new Schema ({
     color:{type: String, required: true },
     brand:{type: String, required: true },
     info:{type: String},
+    photo:{type: String},
     date: { type: Date, default: Date.now }
-})
+});
 
 const Item = mongoose.model("Item", itemSchema);
 
