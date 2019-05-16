@@ -8,14 +8,17 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+// import AccountCircle from '@material-ui/icons/AccountCircle';
 import "./style.css"
-import AddItemDialog from "../Dialog/index"
+import AddItemDialog from "../Add-Item-Btn/index"
+import UserBtn from "../User-Btn/index"
+import ArchiveBtn from "../Archive-Btn/index"
 
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import Archive from '../../pages/Archive';
 // import MenuIcon from '@material-ui/icons/Menu';
 // import MoreIcon from '@material-ui/icons/MoreVert';
 // import MailIcon from '@material-ui/icons/Mail';
@@ -112,7 +115,11 @@ class PrimarySearchAppBar extends React.Component {
               
               
                 <AddItemDialog />
-                <AccountCircle />
+                
+                <ArchiveBtn />
+
+                <UserBtn />
+                {/* <AccountCircle /> */}
               
             </div>
             
