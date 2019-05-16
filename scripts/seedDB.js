@@ -13,7 +13,7 @@ const itemSeed =[
         desc: "Paradise in Brick / Spray paint Tiger",
         color: "Kelly Green",
         brand: "Gildan",
-        photo: "https://imgur.com/a/edXjaN3",
+        photo: "https://i.imgur.com/SIK6CYA.jpg",
         date: new Date(Date.now())
     },
     {
@@ -22,7 +22,7 @@ const itemSeed =[
       desc: "Paradise in Brick / Spray paint Tiger",
       color: "Kelly Green",
       brand: "Gildan",
-      photo: "https://imgur.com/a/edXjaN3",
+      photo: "https://i.imgur.com/SIK6CYA.jpg",
       date: new Date(Date.now())
   },
 ];
