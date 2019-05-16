@@ -91,7 +91,6 @@ class PrimarySearchAppBar extends React.Component {
         <AppBar position="fixed">
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-              {/* <MenuIcon /> */}
             </IconButton>
             <Typography id="nav-title"className={classes.title} variant="h6" color="inherit" noWrap>
               Merch Search
@@ -111,12 +110,7 @@ class PrimarySearchAppBar extends React.Component {
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               
-              <IconButton
-                aria-owns={isMenuOpen ? 'material-appbar' : undefined}
-                aria-haspopup="true"
-                onClick={this.handleProfileMenuOpen}
-                color="inherit"
-              ></IconButton>
+              
                 <AddItemDialog />
                 <AccountCircle />
               
