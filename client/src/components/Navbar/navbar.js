@@ -119,7 +119,7 @@ class PrimarySearchAppBar extends React.Component {
                 <ArchiveBtn />
 
                 <UserBtn />
-                {/* <AccountCircle /> */}
+                
               
             </div>
             

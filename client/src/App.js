@@ -4,7 +4,7 @@ import Archive from "./pages/Archive";
 import NewItems from "./pages/FrontPage";
 import Navbar from "./components/Navbar/navbar";
 import Jumbotron from "./components/Jumbotron/jumbotron";
-import FullScreenDialog from "./components/Add-Item-Btn/add-item-btn"; 
+// import FullScreenDialog from "./components/Add-Item-Btn/add-item-btn"; 
 
 
 function App() {

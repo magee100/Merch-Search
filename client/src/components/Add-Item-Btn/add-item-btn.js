@@ -7,13 +7,23 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import AddIcon from "@material-ui/icons/Add";
+import Select from '@material-ui/core/Select';
 import "./style.css"
 
 
 
 class AddItemDialog extends Component {
   state = {
-    open: false
+    open: false,
+    item: {
+      artist: '',
+      type: '',
+      desc: '',
+      color: '',
+      brand: '',
+      photo: '',
+
+    },
   }
 
   handleToggle = () => {
@@ -22,9 +32,19 @@ class AddItemDialog extends Component {
     })
   }
 
+  handleChange = name => ({ target: { value } }) => {
+    this.setState({
+      item: {
+        ...this.state.item,
+        [name]: value
+      }
+    });
+
+  };
+
 
   render() {
-    const { open } = this.state
+    const { open, item: { artist, type, desc, color, brand, photo } } = this.state
 
     return <Fragment>
       <Button id="add-item-btn" variant="fab" onClick={this.handleToggle} mini >
@@ -43,11 +63,83 @@ class AddItemDialog extends Component {
         onClose={this.handleToggle}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Add an Item</DialogTitle>
+        <DialogTitle id="form-dialog-title">Add An Item</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Stuff  that i keep typing to see how the box will handle all of thistext wiill it get bigger or whider or longer idk but i cant seemto spell for  shit regardless
+            Fill out the form below and hit <br />submit to add item to archive!
             </DialogContentText>
+          <form>
+            <TextField
+              label="Artist"
+              // className={classes.textField}
+              value={artist}
+              onChange={this.handleChange('artist')}
+              margin="normal"
+            />
+            <br />
+            <FormControl className={classes.formControl}>
+              <InputLabel htmlFor="age-simple">Age</InputLabel>
+              <Select
+                value={this.state.age}
+                onChange={this.handleChange}
+                inputProps={{
+                  name: 'age',
+                  id: 'age-simple',
+                }}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
+            <br/>
+            <TextField
+              label="Type"
+              // className={classes.textField}
+              value={type}
+              onChange={this.handleChange('type')}
+              margin="normal"
+            />
+            <br />
+            <TextField
+              label="Description"
+              // className={classes.textField}
+              value={desc}
+              multiline
+              rows="2"
+              onChange={this.handleChange('desc')}
+              margin="normal"
+            />
+            <br />
+            <TextField
+              label="Color"
+              // className={classes.textField}
+              value={color}
+              onChange={this.handleChange('color')}
+              margin="normal"
+            />
+            <br />
+            <TextField
+              label="Brand"
+              // className={classes.textField}
+              value={brand}
+              onChange={this.handleChange('brand')}
+              margin="normal"
+            />
+            <br />
+            <TextField
+              label="Photo Link"
+              // className={classes.textField}
+              value={photo}
+              onChange={this.handleChange('photo')}
+              margin="normal"
+            />
+
+
+          </form>
         </DialogContent>
         <DialogActions>
           <Button onClick={this.handleToggle} color="primary">
