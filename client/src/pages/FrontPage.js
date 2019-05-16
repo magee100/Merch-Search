@@ -1,8 +1,9 @@
 import React, { Component} from "react";
 import API from "../utils/API";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/Lists/lists";
+import Shirt from "../components/Shirt-module/shirt-module";
 
 
 class NewItems extends Component {
@@ -26,6 +27,7 @@ class NewItems extends Component {
         return (
             <Container fluid>
             <h1>Newest Items</h1>
+            <Shirt />
 
                 {this.state.items.length ? (
                     <List>
