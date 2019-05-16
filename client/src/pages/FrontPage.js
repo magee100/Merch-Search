@@ -31,7 +31,7 @@ class NewItems extends Component {
                     <List>
                         {this.state.items.map(item => (
                             <ListItem key={item._id}>
-                            {item.artist} | {item.type} | {item.desc} | {item.color} | {item.brand} |{item.photo} | {item.date}
+                            {item.artist} | {item.type} | {item.desc} | {item.color} | {item.brand} | <img width="150px" height="200px" src={item.photo}></img> | {item.date}
                             </ListItem>
                         ))}
                     </List>

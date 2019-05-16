@@ -15,8 +15,8 @@ class Archive extends Component {
 
     loadItems = () => {
         API.getArchive()
-        .then(res => 
-            this.setState({ items: res.data, })
+            .then(res =>
+                this.setState({ items: res.data, })
             )
             .catch(err => console.log(err));
     };
@@ -24,19 +24,19 @@ class Archive extends Component {
     render() {
         return (
             <Container fluid>
-            <h1>Merch Archive</h1>
+                <h1>Merch Archive</h1>
 
                 {this.state.items.length ? (
                     <List>
                         {this.state.items.map(item => (
                             <ListItem key={item._id}>
-                            {item.artist} | {item.type} | {item.desc} | {item.color} | {item.brand} | {item.photo} | {item.date}
+                                {item.artist} | {item.type} | {item.desc} | {item.color} | {item.brand} | <img width="150px" height="200px" src={item.photo}></img> | {item.date}
                             </ListItem>
                         ))}
                     </List>
                 ) : (
-                    <h1>Failed to Execute</h1>
-                )}
+                        <h1>Failed to Execute</h1>
+                    )}
             </Container>
         );
     }
