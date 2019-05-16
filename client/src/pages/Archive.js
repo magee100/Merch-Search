@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import API from "../utils/API";
 import { Link } from "react-router-dom"
 import { Col, Row, Container } from "../components/Grid";
@@ -14,7 +14,7 @@ class Archive extends Component {
     }
 
     loadItems = () => {
-        API.getItems()
+        API.getArchive()
         .then(res => 
             this.setState({ items: res.data, })
             )
@@ -30,7 +30,7 @@ class Archive extends Component {
                     <List>
                         {this.state.items.map(item => (
                             <ListItem key={item._id}>
-                            {item.artist} | {item.type} | {item.desc} | {item.color} | {item.brand} |{item.photo} | {item.date}
+                            {item.artist} | {item.type} | {item.desc} | {item.color} | {item.brand} | {item.photo} | {item.date}
                             </ListItem>
                         ))}
                     </List>

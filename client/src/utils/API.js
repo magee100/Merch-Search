@@ -2,11 +2,14 @@ import axios from "axios";
 
 export default {
   // Gets all items
+  getArchive: function() {
+    return axios.get("/api/archive");
+  },
   getItems: function() {
     return axios.get("/api/items");
   },
   // Gets the item with the given id
-  getBook: function(id) {
+  getItem: function(id) {
     return axios.get("/api/items/" + id);
   },
   // Deletes the item with the given id

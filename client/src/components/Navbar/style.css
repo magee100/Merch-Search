@@ -2,6 +2,10 @@
     padding-left: 30px;
 }
 
-#search-bar {
+/* #search-bar {
 margin-left: 600px
+} */
+
+#add-item-btn {
+    margin-right: 20px  !important;
 }
