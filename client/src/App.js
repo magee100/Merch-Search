@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Archive from "./pages/Archive";
 import NewItems from "./pages/FrontPage";
-import Navbar from "./components/Navbar/index.js";
-import Jumbotron from "./components/Jumbotron";
-import FullScreenDialog from "./components/Add-Item-Btn"; 
+import Navbar from "./components/Navbar/navbar";
+import Jumbotron from "./components/Jumbotron/jumbotron";
+import FullScreenDialog from "./components/Add-Item-Btn/add-item-btn"; 
 
 
 function App() {
