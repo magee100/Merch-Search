@@ -43,10 +43,10 @@ class AddItemDialog extends Component {
         onClose={this.handleToggle}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+        <DialogTitle id="form-dialog-title">Add an Item</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Stuff
+            Stuff  that i keep typing to see how the box will handle all of thistext wiill it get bigger or whider or longer idk but i cant seemto spell for  shit regardless
             </DialogContentText>
         </DialogContent>
         <DialogActions>
