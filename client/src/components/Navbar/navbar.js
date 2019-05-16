@@ -10,9 +10,9 @@ import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 // import AccountCircle from '@material-ui/icons/AccountCircle';
 import "./style.css"
-import AddItemDialog from "../Add-Item-Btn/index"
+import AddItemDialog from "../Add-Item-Btn/add-item-btn"
 import UserBtn from "../User-Btn/index"
-import ArchiveBtn from "../Archive-Btn/index"
+import ArchiveBtn from "../Archive-Btn/archive-btn"
 
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
