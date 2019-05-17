@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+//card----------------------------------------------------
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
@@ -16,36 +17,132 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { List, ListItem } from "../components/Lists/lists";
-import API from '../../utils/API';
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid/grid";
-import NewItems from '../../pages/FrontPage';
+//card----------------------------------------------------
+import { List, ListItem } from "../Lists/lists";
+import { Col, Row, Container } from "../Grid/grid";
+import API from "../../utils/API";
+
+const styles = theme => ({
+    card: {
+        maxWidth: 400,
+    },
+    media: {
+        height: 200,
+        paddingTop: '56.25%', // 16:9
+    },
+    actions: {
+        display: 'flex',
+    },
+    expand: {
+        transform: 'rotate(0deg)',
+        marginLeft: 'auto',
+        transition: theme.transitions.create('transform', {
+            duration: theme.transitions.duration.shortest,
+        }),
+    },
+    expandOpen: {
+        transform: 'rotate(180deg)',
+    },
+    avatar: {
+        backgroundColor: red[500],
+    },
+});
 
 class Shirt extends Component {
     state = {
-        items: [],
+        expanded: false,
+        items: []
     };
 
-    componentDidMount(){
+    componentDidMount() {
         this.loadItems();
     }
 
     loadItems = () => {
         API.getItems()
-        .then(res => 
-            this.setState({ items: res.data, })
+            .then(res =>
+                this.setState({ items: res.data, })
             )
             .catch(err => console.log(err));
     };
 
-    render(){
+    handleExpandClick = () => {
+        this.setState(state => ({ expanded: !state.expanded }));
+    };
+
+    render() {
+        const { classes } = this.props;
+
         return (
-            <List>
-                hello
-            </List>
-        )
+            <Container fluid>
+                {this.state.items.length ? (
+                    <List>
+                        {this.state.items.map(item => (
+                            <ListItem key={item.id}>
+                                <Card className={classes.card}>
+                                    <CardHeader
+                                        avatar={
+                                            <Avatar aria-label="Item" className={classes.avatar}>
+                                                R
+                                            </Avatar>
+                                        }
+                                        action={
+                                            <IconButton>
+                                                <MoreVertIcon />
+                                            </IconButton>
+                                        }
+                                        title={item.brand}
+                                        subheader={item.date}
+                                    />
+                                    <CardMedia
+                                        className={classes.media}
+                                        image={item.photo}
+                                        title="Paella dish"
+                                    />
+                                    <CardContent>
+                                        <Typography component="p">
+                                            {item.desc}
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActions className={classes.actions} disableActionSpacing>
+                                        <IconButton aria-label="Add to favorites">
+                                            <FavoriteIcon />
+                                        </IconButton>
+                                        <IconButton aria-label="Share">
+                                            <ShareIcon />
+                                        </IconButton>
+                                        <IconButton
+                                            className={classnames(classes.expand, {
+                                                [classes.expandOpen]: this.state.expanded,
+                                            })}
+                                            onClick={this.handleExpandClick}
+                                            aria-expanded={this.state.expanded}
+                                            aria-label="Show more"
+                                        >
+                                            <ExpandMoreIcon />
+                                        </IconButton>
+                                    </CardActions>
+                                    <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                                        <CardContent>
+                                            <Typography paragraph>
+                                                {item.desc}
+                                            </Typography>
+                                        </CardContent>
+                                    </Collapse>
+                                </Card>
+                            </ListItem>
+                        ))}
+                    </List>
+                ) : (
+                        <h1>Failed to execute</h1>
+                    )}
+            </Container>
+        );
     }
 }
 
-export default Shirt;
+Shirt.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Shirt);
