@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+<<<<<<< HEAD
 import { Link } from "react-router-dom"
 import { Col, Row, Container } from "../components/Grid/grid";
+=======
+// import { Link } from "react-router-dom"
+import { 
+    // Col, Row,
+     Container } from "../components/Grid";
+>>>>>>> 335574348e7eac09f7851068126e608a66296207
 import { List, ListItem } from "../components/Lists/lists";
 
 class Archive extends Component {

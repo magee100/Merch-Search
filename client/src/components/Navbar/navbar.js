@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -14,11 +14,11 @@ import AddItemDialog from "../Add-Item-Btn/add-item-btn"
 import UserBtn from "../User-Btn/index"
 import ArchiveBtn from "../Archive-Btn/archive-btn"
 
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import Archive from '../../pages/Archive';
+// import Badge from '@material-ui/core/Badge';
+// import MenuItem from '@material-ui/core/MenuItem';
+// import Menu from '@material-ui/core/Menu';
+// import NotificationsIcon from '@material-ui/icons/Notifications';
+// import Archive from '../../pages/Archive';
 // import MenuIcon from '@material-ui/icons/Menu';
 // import MoreIcon from '@material-ui/icons/MoreVert';
 // import MailIcon from '@material-ui/icons/Mail';
@@ -84,18 +84,20 @@ class PrimarySearchAppBar extends React.Component {
   };
 
   render() {
-    const { anchorEl, mobileMoreAnchorEl } = this.state;
     const { classes } = this.props;
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+    // const { anchorEl, mobileMoreAnchorEl } = this.state;
+
+    // const isMenuOpen = Boolean(anchorEl);
+    // const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
     return (
+
       <div className={classes.root}>
         <AppBar position="fixed">
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
             </IconButton>
-            <Typography id="nav-title"className={classes.title} variant="h6" color="inherit" noWrap>
+            <Typography id="nav-title" className={classes.title} variant="h6" color="inherit" noWrap>
               Merch Search
             </Typography>
             <div id="search-bar" className={classes.search}>
@@ -112,20 +114,20 @@ class PrimarySearchAppBar extends React.Component {
             </div>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              
-              
-                <AddItemDialog />
-                
-                <ArchiveBtn />
 
-                <UserBtn />
-                {/* <AccountCircle /> */}
-              
+
+              <AddItemDialog />
+
+              <ArchiveBtn />
+
+              <UserBtn />
+
+
             </div>
-            
+
           </Toolbar>
         </AppBar>
-        
+
       </div>
     );
   }
