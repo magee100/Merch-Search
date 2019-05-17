@@ -8,9 +8,41 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import AddIcon from "@material-ui/icons/Add";
 import Select from '@material-ui/core/Select';
-import "./style.css"
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import { withStyles } from '@material-ui/core/styles';
 
+import API from "../../utils/API";
+import { types } from '../../utils/extraData';
+import "./style.css";
 
+const styles = theme => ({
+  ArtistControl: {
+    width: 250,
+  },
+
+  TypeControl: {
+    width: 150,
+  },
+
+  DescControl: {
+    width: 500,
+  },
+
+  ColorControl: {
+    width: 125,
+  },
+
+  BrandControl: {
+    width: 200,
+  },
+
+  PhotoControl: {
+    width: 300,
+  },
+
+})
 
 class AddItemDialog extends Component {
   state = {
@@ -42,9 +74,20 @@ class AddItemDialog extends Component {
 
   };
 
+  handleFormSubmit = event => {
+    event.preventDefault();
+    
+      API.saveItem(
+          this.state.item
+      )
+        // .then(res => this.loadBooks())
+        .catch(err => console.log(err));
+   
+  };
 
   render() {
     const { open, item: { artist, type, desc, color, brand, photo } } = this.state
+    const { classes } = this.props;
 
     return <Fragment>
       <Button id="add-item-btn" variant="fab" onClick={this.handleToggle} mini >
@@ -55,10 +98,7 @@ class AddItemDialog extends Component {
 
       <Dialog
         id="item-dialog"
-        contentStyle={{
-          fullWidth: true,
-          maxWidth: 'md'
-        }}
+        
         open={open}
         onClose={this.handleToggle}
         aria-labelledby="form-dialog-title"
@@ -71,47 +111,34 @@ class AddItemDialog extends Component {
           <form>
             <TextField
               label="Artist"
-              // className={classes.textField}
               value={artist}
               onChange={this.handleChange('artist')}
               margin="normal"
+              className={classes.ArtistControl}
             />
             <br />
-            <FormControl className={classes.formControl}>
-              <InputLabel htmlFor="age-simple">Age</InputLabel>
+            <FormControl>
+              <InputLabel htmlFor="type">Item Type</InputLabel>
               <Select
-                value={this.state.age}
-                onChange={this.handleChange}
-                inputProps={{
-                  name: 'age',
-                  id: 'age-simple',
-                }}
+                className={classes.TypeControl}
+                value={type}
+                onChange={this.handleChange('type')}
               >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                {types.map(type =>
+                  <MenuItem value={type}>{type}</MenuItem>
+                )}
               </Select>
             </FormControl>
-            <br/>
-            <TextField
-              label="Type"
-              // className={classes.textField}
-              value={type}
-              onChange={this.handleChange('type')}
-              margin="normal"
-            />
             <br />
             <TextField
               label="Description"
               // className={classes.textField}
               value={desc}
-              multiline
-              rows="2"
+              // multiline
+              // rows="2"
               onChange={this.handleChange('desc')}
               margin="normal"
+              className={classes.DescControl}
             />
             <br />
             <TextField
@@ -120,6 +147,7 @@ class AddItemDialog extends Component {
               value={color}
               onChange={this.handleChange('color')}
               margin="normal"
+              className={classes.ColorControl}
             />
             <br />
             <TextField
@@ -128,6 +156,7 @@ class AddItemDialog extends Component {
               value={brand}
               onChange={this.handleChange('brand')}
               margin="normal"
+              className={classes.BrandControl}
             />
             <br />
             <TextField
@@ -136,17 +165,17 @@ class AddItemDialog extends Component {
               value={photo}
               onChange={this.handleChange('photo')}
               margin="normal"
+              className={classes.PhotoControl}
             />
-
-
           </form>
         </DialogContent>
         <DialogActions>
           <Button onClick={this.handleToggle} color="primary">
             Cancel
             </Button>
-          <Button color="primary">
-            Subscribe
+          <Button color="primary" 
+          onClick= {this.handleFormSubmit}>
+            Submit Item
             </Button>
         </DialogActions>
       </Dialog>
@@ -154,4 +183,4 @@ class AddItemDialog extends Component {
   }
 }
 
-export default AddItemDialog;
+export default withStyles(styles)(AddItemDialog);
