@@ -1,6 +1,6 @@
 import React, { Component} from "react";
 import API from "../utils/API";
-import { Container } from "../components/Grid/grid";
+import { Container } from "../components/Grid";
 import { List, ListItem } from "../components/Lists/lists";
 import Shirt from "../components/Shirt-module/shirt-module";
 
