@@ -1,7 +1,9 @@
 import React, { Component} from "react";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid/grid";
+// import { Link } from "react-router-dom"
+import { 
+    // Col, Row, 
+    Container } from "../components/Grid/grid";
 import { List, ListItem } from "../components/Lists/lists";
 import Shirt from "../components/Shirt-module/shirt-module";
 
