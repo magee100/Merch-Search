@@ -22,23 +22,13 @@ class NewItems extends Component {
             .catch(err => console.log(err));
     };
 
+    // {item.artist} | {item.type} | {item.desc} | {item.color} | {item.brand} | <img width="150px" height="200px" src={item.photo}></img> | {item.date}
+
     render() {
         return (
             <Container fluid>
             <h1>Newest Items</h1>
             <Shirt />
-
-                {this.state.items.length ? (
-                    <List>
-                        {this.state.items.map(item => (
-                            <ListItem key={item._id}>
-                            {item.artist} | {item.type} | {item.desc} | {item.color} | {item.brand} | <img width="150px" height="200px" src={item.photo}></img> | {item.date}
-                            </ListItem>
-                        ))}
-                    </List>
-                ) : (
-                    <h1>Failed to Execute</h1>
-                )}
             </Container>
         );
     }
