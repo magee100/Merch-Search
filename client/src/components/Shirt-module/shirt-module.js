@@ -92,7 +92,7 @@ class Shirt extends Component {
                                             </IconButton>
                                         }
                                         title={item.brand}
-                                        subheader={item.date}
+                                        subheader=" "
                                     />
                                     <CardMedia
                                         className={classes.media}
@@ -101,7 +101,7 @@ class Shirt extends Component {
                                     />
                                     <CardContent>
                                         <Typography component="p">
-                                            {item.desc}
+                                                {item.date}
                                         </Typography>
                                     </CardContent>
                                     <CardActions className={classes.actions} disableActionSpacing>
