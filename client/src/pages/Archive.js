@@ -3,7 +3,7 @@ import API from "../utils/API";
 // import { Link } from "react-router-dom"
 import { 
     // Col, Row,
-     Container } from "../components/Grid/grid";
+     Container } from "../components/Grid";
 import { List, ListItem } from "../components/Lists/lists";
 
 class Archive extends Component {
