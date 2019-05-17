@@ -19,7 +19,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { List, ListItem } from "../components/Lists/lists";
 import API from '../../utils/API';
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
+import { Col, Row, Container } from "../components/Grid/grid";
 import NewItems from '../../pages/FrontPage';
 
 class Shirt extends Component {
