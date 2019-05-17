@@ -13,16 +13,13 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 //card----------------------------------------------------
 import { List, ListItem } from "../Lists/lists";
-import {
-    // Col, Row, 
-    Container
-} from "../Grid/grid";
+import { Container } from "../Grid/grid";
 import API from "../../utils/API";
 
 const styles = theme => ({
@@ -54,7 +51,7 @@ const styles = theme => ({
 class Shirt extends Component {
     state = {
         expanded: false,
-        items: []
+        items: [],
     };
 
     componentDidMount() {
