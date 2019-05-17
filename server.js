@@ -14,6 +14,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+//
 app.use(session({secret: "merch keyboard", resave: true, saveUnitialized: true}));
 
 // Serve up static assets (usually on heroku)
