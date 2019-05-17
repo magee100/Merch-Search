@@ -19,7 +19,10 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 //card----------------------------------------------------
 import { List, ListItem } from "../Lists/lists";
-import { Col, Row, Container } from "../Grid/grid";
+import {
+    // Col, Row, 
+    Container
+} from "../Grid/grid";
 import API from "../../utils/API";
 
 const styles = theme => ({
@@ -91,8 +94,8 @@ class Shirt extends Component {
                                                 <MoreVertIcon />
                                             </IconButton>
                                         }
-                                        title={item.brand}
-                                        subheader=" "
+                                        title={item.artist} 
+                                        subheader={item.type}
                                     />
                                     <CardMedia
                                         className={classes.media}
@@ -101,16 +104,16 @@ class Shirt extends Component {
                                     />
                                     <CardContent>
                                         <Typography component="p">
-                                                {item.date}
+                                            {item.date}
                                         </Typography>
                                     </CardContent>
                                     <CardActions className={classes.actions} disableActionSpacing>
-                                        <IconButton aria-label="Add to favorites">
+                                        {/* <IconButton aria-label="Add to favorites">
                                             <FavoriteIcon />
-                                        </IconButton>
-                                        <IconButton aria-label="Share">
+                                        </IconButton> */}
+                                        {/* <IconButton aria-label="Share">
                                             <ShareIcon />
-                                        </IconButton>
+                                        </IconButton> */}
                                         <IconButton
                                             className={classnames(classes.expand, {
                                                 [classes.expandOpen]: this.state.expanded,
@@ -126,10 +129,13 @@ class Shirt extends Component {
                                         <CardContent>
                                             <Typography paragraph>
                                                 {item.desc}
+                                                <p>Brand: {item.brand}</p>
+                                                <p>Color: {item.color}</p>
                                             </Typography>
                                         </CardContent>
                                     </Collapse>
                                 </Card>
+                                <br/>
                             </ListItem>
                         ))}
                     </List>

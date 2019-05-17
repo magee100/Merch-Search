@@ -31,7 +31,7 @@ class NewItems extends Component {
             <h1>Newest Items</h1>
             <Shirt />
 
-                {this.state.items.length ? (
+                {/* {this.state.items.length ? (
                     <List>
                         {this.state.items.map(item => (
                             <ListItem key={item._id}>
@@ -41,7 +41,7 @@ class NewItems extends Component {
                     </List>
                 ) : (
                     <h1>Failed to Execute</h1>
-                )}
+                )} */}
             </Container>
         );
     }
