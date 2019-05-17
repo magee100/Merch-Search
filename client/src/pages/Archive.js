@@ -3,11 +3,7 @@ import API from "../utils/API";
 // import { Link } from "react-router-dom"
 import { 
     // Col, Row,
-<<<<<<< HEAD
      Container } from "../components/Grid";
-=======
-     Container } from "../components/Grid/grid";
->>>>>>> 97226d613bfc412c963a587b8f68855149e65e48
 import { List, ListItem } from "../components/Lists/lists";
 
 class Archive extends Component {
