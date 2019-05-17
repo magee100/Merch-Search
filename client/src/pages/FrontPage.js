@@ -1,6 +1,7 @@
 import React, { Component} from "react";
 import API from "../utils/API";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid/grid";
 =======
@@ -9,6 +10,12 @@ import {
     // Col, Row, 
     Container } from "../components/Grid";
 >>>>>>> 335574348e7eac09f7851068126e608a66296207
+=======
+// import { Link } from "react-router-dom"
+import { 
+    // Col, Row, 
+    Container } from "../components/Grid/grid";
+>>>>>>> 97226d613bfc412c963a587b8f68855149e65e48
 import { List, ListItem } from "../components/Lists/lists";
 import Shirt from "../components/Shirt-module/shirt-module";
 
