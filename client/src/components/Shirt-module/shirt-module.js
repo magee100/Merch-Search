@@ -19,7 +19,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 //card----------------------------------------------------
 import { List, ListItem } from "../Lists/lists";
-import { Col, Row, Container } from "../Grid/grid";
+import { Container } from "../Grid/grid";
 import API from "../../utils/API";
 
 const styles = theme => ({

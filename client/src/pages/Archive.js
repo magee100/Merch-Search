@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Link } from "react-router-dom"
-import { Col, Row, Container } from "../components/Grid/grid";
+import { Container } from "../components/Grid/grid";
 import { List, ListItem } from "../components/Lists/lists";
 
 class Archive extends Component {
