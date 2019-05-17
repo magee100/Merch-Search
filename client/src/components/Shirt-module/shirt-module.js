@@ -100,7 +100,7 @@ class Shirt extends Component {
                                     <CardMedia
                                         className={classes.media}
                                         image={item.photo}
-                                        title="Paella dish"
+                                        title="item-Image"
                                     />
                                     <CardContent>
                                         <Typography component="p">
