@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 //card----------------------------------------------------
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -18,6 +19,11 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 //card----------------------------------------------------
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import classNames from 'classnames';
+
+
 import { List, ListItem } from "../Lists/lists";
 import {
     // Col, Row, 
@@ -28,7 +34,23 @@ import API from "../../utils/API";
 const styles = theme => ({
     card: {
         maxWidth: 400,
+        
     },
+
+    layout: {
+        width: 'auto',
+        marginLeft: theme.spacing.unit * 3,
+        marginRight: theme.spacing.unit * 3,
+        [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
+        //   width: 1100,
+          marginLeft: 50,
+          marginRight: 50,
+        },
+      },
+      cardGrid: {
+        // padding: `${theme.spacing.unit * 8}px 0`,
+      },
+
     media: {
         height: 200,
         paddingTop: '56.25%', // 16:9
@@ -77,16 +99,27 @@ class Shirt extends Component {
         const { classes } = this.props;
 
         return (
-            <Container fluid>
+            <Container
+            //  fluid
+             >
+
+            <div className={classNames(classes.layout, classes.cardGrid)}>
                 {this.state.items.length ? (
-                    <List>
+                
+                    <Grid 
+                    container 
+                    justify="space-around"
+                    spacing={40}
+                    >
                         {this.state.items.map(item => (
-                            <ListItem key={item.id}>
-                                <Card className={classes.card}>
+                          
+                                <Grid item sm={6} md={4} lg={4}>
+
+                                <Card className={classes.card} key={item.id}>
                                     <CardHeader
                                         avatar={
                                             <Avatar aria-label="Item" className={classes.avatar}>
-                                                R
+                                                Item
                                             </Avatar>
                                         }
                                         action={
@@ -104,15 +137,12 @@ class Shirt extends Component {
                                     />
                                     <CardContent>
                                         <Typography component="p">
-                                            {item.date}
+                                            Added on: {moment(item.date).format('MM/DD/YY hh:mm A')}
                                         </Typography>
                                     </CardContent>
                                     <CardActions className={classes.actions} disableActionSpacing>
                                         {/* <IconButton aria-label="Add to favorites">
                                             <FavoriteIcon />
-                                        </IconButton> */}
-                                        {/* <IconButton aria-label="Share">
-                                            <ShareIcon />
                                         </IconButton> */}
                                         <IconButton
                                             className={classnames(classes.expand, {
@@ -135,13 +165,17 @@ class Shirt extends Component {
                                         </CardContent>
                                     </Collapse>
                                 </Card>
-                                <br/>
-                            </ListItem>
+                                
+                                </Grid>
+                            
                         ))}
-                    </List>
+                        </Grid>
+                    
                 ) : (
                         <h1>Failed to execute</h1>
                     )}
+                    </div>
+
             </Container>
         );
     }

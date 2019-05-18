@@ -26,7 +26,9 @@ class NewItems extends Component {
 
     render() {
         return (
-            <Container fluid>
+            <Container 
+            // fluid
+            >
             <h1>Newest Items</h1>
             <Shirt />
             </Container>
