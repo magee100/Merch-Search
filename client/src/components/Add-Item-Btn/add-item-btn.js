@@ -174,7 +174,9 @@ class AddItemDialog extends Component {
             Cancel
             </Button>
           <Button color="primary" 
-          onClick= {this.handleFormSubmit}>
+          onClick= {this.handleFormSubmit}
+          // onClick={this.handleToggle} 
+          >
             Submit Item
             </Button>
         </DialogActions>

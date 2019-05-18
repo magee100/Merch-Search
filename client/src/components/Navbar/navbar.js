@@ -13,6 +13,7 @@ import "./style.css"
 import AddItemDialog from "../Add-Item-Btn/add-item-btn"
 import UserBtn from "../User-Btn/index"
 import ArchiveBtn from "../Archive-Btn/archive-btn"
+import { Link } from "react-router-dom";
 
 // import Badge from '@material-ui/core/Badge';
 // import MenuItem from '@material-ui/core/MenuItem';
@@ -97,9 +98,17 @@ class PrimarySearchAppBar extends React.Component {
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
             </IconButton>
-            <Typography id="nav-title" className={classes.title} variant="h6" color="inherit" noWrap>
+
+            
+            <Link to="/">
+            <Typography id="nav-title" className={classes.title} variant="h6" color="inherit" 
+            noWrap
+            >
               Merch Search
             </Typography>
+            </Link>
+            
+            
             <div id="search-bar" className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
