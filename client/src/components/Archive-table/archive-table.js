@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 //table--------------------------------------------------------------
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -25,7 +25,7 @@ const actionsStyles = theme => ({
     },
 });
 
-class ArchiveTable extends React.Component {
+class ArchiveTable extends Component {
     handleFirstPageButtonClick = event => {
         this.props.onChangePage(event, 0);
     };
@@ -109,7 +109,7 @@ const styles = theme => ({
     },
 });
 
-class CustomPaginationActionsTable extends React.Component {
+class CustomPaginationActionsTable extends Component {
     state = {
         items: [],
         page: 0,
@@ -132,7 +132,8 @@ class CustomPaginationActionsTable extends React.Component {
         this.setState({ page });
     };
 
-    handleChangeItemsPerPage = event => {
+    handleChangeRowsPerPage = event => {
+        console.log(event.target.value);
         this.setState({ page: 0, itemsPerPage: event.target.value });
     };
 
@@ -172,16 +173,16 @@ class CustomPaginationActionsTable extends React.Component {
                         <TableFooter>
                             <TableRow>
                                 <TablePagination
-                                    itemsPerPageOptions={[5, 10, 25]}
+                                    rowsPerPageOptions={[5, 10, 25]}
                                     colSpan={3}
                                     count={items.length}
-                                    itemsPerPage={itemsPerPage}
+                                    rowsPerPage={itemsPerPage}
                                     page={page}
                                     SelectProps={{
                                         native: true,
                                     }}
                                     onChangePage={this.handleChangePage}
-                                    onChangeitemsPerPage={this.handleChangeItemsPerPage}
+                                    onChangeRowsPerPage={this.handleChangeRowsPerPage}
                                     ActionsComponent={ArchiveTableWrapped}
                                 />
                             </TableRow>

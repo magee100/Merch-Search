@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 mongoose.connect(
-    process.env.MONGODB_URI ||
-    "mongodb://localhost/merchdb"
+  process.env.MONGODB_URI ||
+  "mongodb://localhost/merchdb"
 );
 
 const itemSeed =[
@@ -19,13 +19,13 @@ const itemSeed =[
 ];
 
 db.Item
-.remove({})
-.then(() => db.Item.collection.insertMany(itemSeed))
-.then(data => {
-  console.log(data.result.n + " records inserted!");
-  process.exit(0);
-})
-.catch(err => {
-  console.error(err);
-  process.exit(1);
-});
+  .remove({})
+  .then(() => db.Item.collection.insertMany(itemSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
