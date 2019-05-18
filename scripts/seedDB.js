@@ -10,57 +10,12 @@ const itemSeed =[
     {
         artist: "Krust",
         type: "Shirt",
-        desc: "Paradise in Brick / Spray paint Tiger",
+        desc: "Spray Paint Tiger / Paradise in Brick",
         color: "Kelly Green",
         brand: "Gildan",
         photo: "https://i.imgur.com/SIK6CYA.jpg",
         date: new Date(Date.now())
     },
-    {
-      artist: "Arust",
-      type: "Shirt",
-      desc: "Paradise in Brick / Spray paint Tiger",
-      color: "Kelly Green",
-      brand: "Gildan",
-      photo: "https://i.imgur.com/SIK6CYA.jpg",
-      date: new Date(Date.now())
-  },
-  {
-    artist: "Krust",
-    type: "Shirt",
-    desc: "Paradise in Brick / Spray paint Tiger",
-    color: "Kelly Green",
-    brand: "Gildan",
-    photo: "https://i.imgur.com/SIK6CYA.jpg",
-    date: new Date(Date.now())
-},
-{
-  artist: "Arust",
-  type: "Shirt",
-  desc: "Paradise in Brick / Spray paint Tiger",
-  color: "Kelly Green",
-  brand: "Gildan",
-  photo: "https://i.imgur.com/SIK6CYA.jpg",
-  date: new Date(Date.now())
-},
-{
-  artist: "Krust",
-  type: "Shirt",
-  desc: "Paradise in Brick / Spray paint Tiger",
-  color: "Kelly Green",
-  brand: "Gildan",
-  photo: "https://i.imgur.com/SIK6CYA.jpg",
-  date: new Date(Date.now())
-},
-{
-artist: "Arust",
-type: "Shirt",
-desc: "Paradise in Brick / Spray paint Tiger",
-color: "Kelly Green",
-brand: "Gildan",
-photo: "https://i.imgur.com/SIK6CYA.jpg",
-date: new Date(Date.now())
-},
 ];
 
 db.Item

@@ -113,7 +113,7 @@ class CustomPaginationActionsTable extends React.Component {
     state = {
         items: [],
         page: 0,
-        itemsPerPage: 5,
+        itemsPerPage: 10,
     };
 
     componentDidMount() {
@@ -121,7 +121,7 @@ class CustomPaginationActionsTable extends React.Component {
     }
 
     loadItems = () => {
-        API.getItems()
+        API.getArchive()
             .then(res =>
                 this.setState({ items: res.data, })
             )

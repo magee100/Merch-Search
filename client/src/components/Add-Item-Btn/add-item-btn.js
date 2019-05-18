@@ -74,15 +74,28 @@ class AddItemDialog extends Component {
 
   };
 
+  loadItems = () => {
+    API.getItems()
+      .then(res =>
+        this.setState({ items: res.data, })
+      )
+      .catch(err => console.log(err));
+  };
+
   handleFormSubmit = event => {
     event.preventDefault();
-    
-      API.saveItem(
-          this.state.item
-      )
-        // .then(res => this.loadBooks())
-        .catch(err => console.log(err));
-   
+
+    API.saveItem(
+      this.state.item
+    )
+      
+      .then(this.loadItems())
+      .then(this.setState({
+        open: !this.state.open
+      }))
+      
+      .catch(err => console.log(err));
+
   };
 
   render() {
@@ -98,7 +111,7 @@ class AddItemDialog extends Component {
 
       <Dialog
         id="item-dialog"
-        
+
         open={open}
         onClose={this.handleToggle}
         aria-labelledby="form-dialog-title"
@@ -173,8 +186,8 @@ class AddItemDialog extends Component {
           <Button onClick={this.handleToggle} color="primary">
             Cancel
             </Button>
-          <Button color="primary" 
-          onClick= {this.handleFormSubmit}
+          <Button color="primary"
+            onClick={this.handleFormSubmit}
           // onClick={this.handleToggle} 
           >
             Submit Item
