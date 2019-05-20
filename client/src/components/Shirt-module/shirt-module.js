@@ -19,12 +19,10 @@ import red from '@material-ui/core/colors/red';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 //card----------------------------------------------------
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import classNames from 'classnames';
 
 
-import { List, ListItem } from "../Lists/lists";
 import { Container } from "../Grid/grid";
 import API from "../../utils/API";
 
