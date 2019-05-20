@@ -12,7 +12,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import { withStyles } from '@material-ui/core/styles';
-
+import classNames from 'classnames';
 import API from "../../utils/API";
 import { types } from '../../utils/extraData';
 import "./style.css";
@@ -20,26 +20,50 @@ import "./style.css";
 const styles = theme => ({
   ArtistControl: {
     width: 250,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+
+    // marginLeft: theme.spacing.unit,
+    // marginRight: theme.spacing.unit,
   },
 
   TypeControl: {
     width: 150,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
   },
 
   DescControl: {
     width: 500,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
   },
 
   ColorControl: {
     width: 125,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
   },
 
   BrandControl: {
     width: 200,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
   },
 
   PhotoControl: {
     width: 300,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+  },
+
+  // container: {
+  //   display: 'flex',
+  //   flexWrap: 'wrap',
+  // },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
   },
 
 })
@@ -119,65 +143,89 @@ class AddItemDialog extends Component {
         <DialogTitle id="form-dialog-title">Add An Item</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Fill out the form below and hit <br />submit to add item to archive!
+            Fill out the form below and hit submit to add item to archive!
             </DialogContentText>
-          <form>
+          <form className={classes.container}>
             <TextField
               label="Artist"
               value={artist}
               onChange={this.handleChange('artist')}
               margin="normal"
-              className={classes.ArtistControl}
+              classNames={classes.ArtistControl}
+              variant="filled"
             />
-            <br />
+            {/* <br />
             <FormControl>
-              <InputLabel htmlFor="type">Item Type</InputLabel>
+              <InputLabel 
+              
+              htmlFor="type">Item Type</InputLabel>
               <Select
                 className={classes.TypeControl}
                 value={type}
+                variant="filled"
                 onChange={this.handleChange('type')}
               >
                 {types.map(type =>
-                  <MenuItem value={type}>{type}</MenuItem>
+                  <MenuItem key={type.value} value={type}>{type}</MenuItem>
                 )}
+
               </Select>
-            </FormControl>
-            <br />
+            </FormControl> */}
+
+            <TextField
+            label="Item Type"
+            select
+            className={classes.TypeControl}
+            onChange={this.handleChange('type')}
+            variant="filled"
+            margin="normal"
+            value={type}
+            >
+            {types.map(type =>
+                  <MenuItem 
+                  // key={type.value} 
+                  value={type}>{type}</MenuItem>
+                )}
+            </TextField>
+         
             <TextField
               label="Description"
-              // className={classes.textField}
               value={desc}
+              variant="filled"
               // multiline
               // rows="2"
               onChange={this.handleChange('desc')}
               margin="normal"
               className={classes.DescControl}
             />
-            <br />
+          
             <TextField
               label="Color"
               // className={classes.textField}
               value={color}
               onChange={this.handleChange('color')}
               margin="normal"
+              variant="filled"
               className={classes.ColorControl}
             />
-            <br />
+            
             <TextField
               label="Brand"
               // className={classes.textField}
               value={brand}
               onChange={this.handleChange('brand')}
               margin="normal"
+              variant="filled"
               className={classes.BrandControl}
             />
-            <br />
+        
             <TextField
               label="Photo Link"
               // className={classes.textField}
               value={photo}
               onChange={this.handleChange('photo')}
               margin="normal"
+              variant="filled"
               className={classes.PhotoControl}
             />
           </form>

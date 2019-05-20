@@ -14,6 +14,8 @@ const itemSeed =[
         color: "Kelly Green",
         brand: "Gildan",
         photo: "https://i.imgur.com/SIK6CYA.jpg",
+        info: "Paradise In Brick Pre-order",
+        release: "Sold online in 2016",
         date: new Date(Date.now())
     },
 ];

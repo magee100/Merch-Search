@@ -8,6 +8,7 @@ const itemSchema = new Schema ({
     color:{type: String, required: true },
     brand:{type: String, required: true },
     info: {type: String},
+    release: {type: String},
     photo: {type: String, required: true },
     date: { type: Date, default: Date.now },
     versionKey: false
