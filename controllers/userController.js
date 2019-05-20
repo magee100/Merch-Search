@@ -4,10 +4,17 @@ module.exports = {
 
     getUser: function (req, res) {
         db.User
-            .find({username: req.query.username})
+            .find({email: req.query.email})
+            .find({password: req.query.password})
+            .find({firstName: req.query.firstName})
+            .find({lastName: req.query.lastName})
             .then(user =>{
                 console.log(user)
                 res.json(user)
+                res.send({
+                  success: true,
+                  message: "Signed up!"
+                })
             })
             .catch(err => res.status(422).json(err));
     },
@@ -17,7 +24,7 @@ module.exports = {
         db.User
           .create(req.body)
           .then(dbModel => {
-              console.log(dbModel)
+              console.log(dbModel)  
               res.json(dbModel)
             })
           .catch(err => {
@@ -25,4 +32,5 @@ module.exports = {
               res.status(422).json(err)
         });
       },
+      
 }
