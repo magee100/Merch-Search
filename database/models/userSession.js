@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const userSessionSchema = mongoose.Schema;
 
-const userSessionSchema = new Schema ({
+const userSessionSchema = new mongoose.Schema ({
     userID:{type: Number, default:-1},
     timestamp: {type: Date, default: Date.now()},
     isDeleted: {type: Boolean,default: false}

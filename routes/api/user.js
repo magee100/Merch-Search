@@ -7,7 +7,7 @@ router.route("/")
 // Register Page
     .post(userController.signUpUser)
 // Login Page
-
+    .post(userController.signInUser)
     
 
 module.exports = router;
