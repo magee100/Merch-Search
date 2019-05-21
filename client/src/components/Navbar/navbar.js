@@ -2,27 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
-// import AccountCircle from '@material-ui/icons/AccountCircle';
 import "./style.css"
 import AddItemDialog from "../Add-Item-Btn/add-item-btn"
-import UserBtn from "../User-Btn/index"
+import UserBtn from "../User-Btn/user-btn"
 import ArchiveBtn from "../Archive-Btn/archive-btn"
 import { Link } from "react-router-dom";
 
-// import Badge from '@material-ui/core/Badge';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import Menu from '@material-ui/core/Menu';
-// import NotificationsIcon from '@material-ui/icons/Notifications';
-// import Archive from '../../pages/Archive';
-// import MenuIcon from '@material-ui/icons/Menu';
-// import MoreIcon from '@material-ui/icons/MoreVert';
-// import MailIcon from '@material-ui/icons/Mail';
 const styles = theme => ({
   root: {
     width: '100%',
@@ -86,29 +76,32 @@ class PrimarySearchAppBar extends React.Component {
 
   render() {
     const { classes } = this.props;
-    // const { anchorEl, mobileMoreAnchorEl } = this.state;
-
-    // const isMenuOpen = Boolean(anchorEl);
-    // const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
     return (
 
       <div className={classes.root}>
         <AppBar position="fixed">
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-            </IconButton>
+            
 
-            
-            <Link to="/">
-            <Typography id="nav-title" className={classes.title} variant="h6" color="inherit" 
-            noWrap
+
+
+            <Typography id="nav-title" className={classes.title} variant="h6" color="inherit"
+              noWrap
             >
-              Merch Search
+              <Link 
+              to="/"
+              variant="body1"
+              
+              
+              >
+
+                Merch Search
+  
+              </Link>
             </Typography>
-            </Link>
-            
-            
+
+
+
             <div id="search-bar" className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />

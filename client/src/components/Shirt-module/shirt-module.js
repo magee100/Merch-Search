@@ -14,17 +14,16 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
-// import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 //card----------------------------------------------------
-import Paper from '@material-ui/core/Paper';
+// import Paper from '@material-ui/core/Paper';
+// import { List, ListItem } from "../Lists/lists";
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import ShareIcon from '@material-ui/icons/Share';
+import { Link } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import classNames from 'classnames';
-
-
-import { List, ListItem } from "../Lists/lists";
 import { Container } from "../Grid/grid";
 import API from "../../utils/API";
 
@@ -116,7 +115,7 @@ class Shirt extends Component {
                                     <CardHeader
                                         avatar={
                                             <Avatar aria-label="Item" className={classes.avatar}>
-                                                Item
+                                                <Link to={"/items/" + item._id}>Item</Link>
                                             </Avatar>
                                         }
                                         action={
@@ -125,7 +124,8 @@ class Shirt extends Component {
                                             </IconButton>
                                         }
                                         title={item.artist} 
-                                        subheader={item.type}
+                                        
+                                        subheader={item.desc}
                                     />
                                     <CardMedia
                                         className={classes.media}
@@ -155,7 +155,7 @@ class Shirt extends Component {
                                     <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
                                         <CardContent>
                                             <Typography paragraph>
-                                                {item.desc}
+                                                <p>Release Info: {item.release}</p>
                                                 <p>Brand: {item.brand}</p>
                                                 <p>Color: {item.color}</p>
                                             </Typography>

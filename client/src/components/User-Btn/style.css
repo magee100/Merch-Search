@@ -1,0 +1,24 @@
+ #line {
+     width:505px;
+     border: solid black 1px;
+     align-content: center;
+ }
+
+ #login-btn {
+    margin-right: 50px;
+ }
+
+ #create-btn {
+    margin-right: 50px;
+ };
+
+ #user-dialog-title3 {
+ margin-top: 0px !important;
+ }
+
+ #line-p {
+    margin: 0px !important;
+ };
+ p {
+    margin: 0px  !important;
+ }

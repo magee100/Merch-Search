@@ -14,6 +14,7 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
+import { Link } from "react-router-dom";
 //table--------------------------------------------------------------
 import API from "../../utils/API";
 
@@ -156,9 +157,15 @@ class CustomPaginationActionsTable extends Component {
                                         {item.artist}
                                     </TableCell>
                                     <TableCell>{item.type}</TableCell>
-                                    <TableCell>{item.desc}</TableCell>
+                                    <TableCell>
+                                    <Link to={"/items/" + item._id}>
+                                    {item.desc}
+                                    </Link>
+                                    </TableCell>
+                                    <TableCell>{item.release}</TableCell>
                                     <TableCell>{item.color}</TableCell>
                                     <TableCell>{item.brand}</TableCell>
+                                    
                                     <TableCell>
                                         <button type="submit">Add</button>
                                     </TableCell>
@@ -173,7 +180,7 @@ class CustomPaginationActionsTable extends Component {
                         <TableFooter>
                             <TableRow>
                                 <TablePagination
-                                    rowsPerPageOptions={[5, 10, 25]}
+                                    rowsPerPageOptions={[5, 10, 25, 50, 100]}
                                     colSpan={3}
                                     count={items.length}
                                     rowsPerPage={itemsPerPage}
