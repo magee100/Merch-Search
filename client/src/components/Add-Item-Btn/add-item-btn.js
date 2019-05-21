@@ -64,7 +64,7 @@ class AddItemDialog extends React.Component {
       color: '',
       brand: '',
       release: '',
-      photo: '',
+      photo: [''],
 
     },
   }
@@ -95,7 +95,7 @@ class AddItemDialog extends React.Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-
+    this.state.item.photo = this.state.item.photo.split('\n');
     API.saveItem(
       this.state.item
     )
@@ -206,6 +206,7 @@ class AddItemDialog extends React.Component {
               value={photo}
               onChange={this.handleChange('photo')}
               margin="normal"
+              multiline
               variant="filled"
               className={classes.PhotoControl}
 
