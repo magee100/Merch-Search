@@ -100,18 +100,14 @@ class Shirt extends Component {
              >
 
             <div className={classNames(classes.layout, classes.cardGrid)}>
-                {this.state.items.length ? (
-                
                     <Grid 
                     container 
                     justify="space-around"
                     spacing={40}
                     >
                         {this.state.items.map(item => (
-                          
                                 <Grid item sm={6} md={4} lg={4}>
-
-                                <Card className={classes.card} key={item.id}>
+                                <Card className={classes.card} key={item._id}>
                                     <CardHeader
                                         avatar={
                                             <Avatar aria-label="Item" className={classes.avatar}>
@@ -167,10 +163,7 @@ class Shirt extends Component {
                             
                         ))}
                         </Grid>
-                    
-                ) : (
-                        <h1>Failed to execute</h1>
-                    )}
+                
                     </div>
 
             </Container>

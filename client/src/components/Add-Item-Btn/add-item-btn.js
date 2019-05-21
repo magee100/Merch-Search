@@ -94,7 +94,7 @@ class AddItemDialog extends React.Component {
   };
 
   handleFormSubmit = event => {
-    event.preventDefault();
+    window.location.reload()
 
     API.saveItem(
       this.state.item

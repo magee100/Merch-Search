@@ -11,8 +11,6 @@ function App() {
         <Router>
             <div>
                 <Navbar/>
-                
-               
                 <Switch>
                     <Route exact path="/archive" component={Archive} />
                     <Route exact path="/" component={NewItems} />

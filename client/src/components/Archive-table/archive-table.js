@@ -306,11 +306,7 @@ class EnhancedTable extends React.Component {
                                                 <Checkbox checked={isSelected} />
                                             </TableCell>
                                             <TableCell align="left">
-                                                <img
-                                                    height="50px"
-                                                    width="50px"
-                                                    src={item.photo}
-                                                />
+
                                             </TableCell>
                                             <TableCell align="left">{item.artist}</TableCell>
                                             <TableCell align="left">{item.type}</TableCell>
