@@ -116,6 +116,19 @@ const itemSeed =[
   release: "Sold at 2012 Reunion Show??",
   date: new Date(Date.now())
 },
+
+{
+  artist: "Test Shirt",
+  type: "Shirt",
+  desc: "This shouldh ave 3 images",
+  color: "otherwise its  fucked",
+  brand: "get  it  right get it tight",
+  photo: ["https://i.imgur.com/VZWZDrh.jpg",
+  "https://i.imgur.com/VZWZDrh.jpg",
+  "https://i.imgur.com/VZWZDrh.jpg"],
+  release: "FLAVA FLAAAVVVVV",
+  date: new Date(Date.now())
+},
 ];
 db.Item
   .remove({})

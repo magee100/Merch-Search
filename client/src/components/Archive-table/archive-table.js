@@ -19,6 +19,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 import API from "../../utils/API";
+import { Link } from "react-router-dom";
 
 function desc(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -314,7 +315,13 @@ class EnhancedTable extends React.Component {
                                             </TableCell>
                                             <TableCell align="left">{item.artist}</TableCell>
                                             <TableCell align="left">{item.type}</TableCell>
-                                            <TableCell align="left">{item.desc}</TableCell>
+
+                                            <TableCell align="left">
+                                            <Link to={"/items/" + item._id}>{item.desc}</Link>
+                                            </TableCell>
+
+                                            
+
                                             <TableCell align="left">{item.release}</TableCell>
                                             <TableCell align="left">{item.color}</TableCell>
                                             <TableCell align="left">{item.brand}</TableCell>
