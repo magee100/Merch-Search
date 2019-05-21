@@ -6,9 +6,9 @@ const itemSchema = new Schema ({
     type:{type: String, required: true },
     desc:{type: String, required: true },
     color:{type: String, required: true },
-    brand:{type: String, required: true },
+    brand:{type: String,},
     release: {type: String},
-    photo: {type: String, required: true },
+    photo: [{type: String, required: true }],
     date: { type: Date, default: Date.now },
     versionKey: false
 });
