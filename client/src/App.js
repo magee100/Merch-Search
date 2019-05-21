@@ -5,8 +5,6 @@ import NewItems from "./pages/FrontPage";
 import Navbar from "./components/Navbar/navbar";
 import Jumbotron from "./components/Jumbotron/jumbotron";
 
-
-
 function App() {
     return (
         <Router>
