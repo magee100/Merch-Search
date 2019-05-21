@@ -19,5 +19,9 @@ export default {
   // Saves a item to the database
   saveItem: function(itemData) {
     return axios.post("/api/items", itemData);
-  }
+  },
+  signUpUser: function(userData){
+    return axios.post("/api/signup");
+  },
+  signInUser: functi
 };
