@@ -6,43 +6,29 @@ import { Link } from "react-router-dom";
 import "./style.css"
 
 
-class ArchiveBtn extends Component {
-    state = {
-      open: false
-    }
-  
-    handleToggle = () => {
-      this.setState({
-        open: !this.state.open
-      })
-    }
-
-    // toArchive = event => {
-    //   src="/archive"
-    // }
-  
-  
-    render() {
-      const { open } = this.state
-  
-      return <Fragment>
-        <Link to="/archive">
-        <Button id="add-item-btn" 
-        variant="fab" 
-        // onClick={this.toArchive} 
-        // to={"/archive"}
-        mini >
-  
-        <Storage/>
-
-        
-        
-        
-
-        </Button>
-        </Link>
-      </Fragment>
-    }
+class ArchiveBtn extends React.Component {
+  state = {
+    open: false
   }
-  
-  export default ArchiveBtn;
+
+  handleToggle = () => {
+    this.setState({
+      open: !this.state.open
+    })
+  }
+
+
+  render() {
+    return <Fragment>
+      <Link to="/archive">
+        <Button id="archive-btn"
+          variant="fab"
+          mini >
+          <Storage />
+        </Button>
+      </Link>
+    </Fragment>
+  }
+}
+
+export default ArchiveBtn;

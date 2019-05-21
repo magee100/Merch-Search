@@ -20,8 +20,13 @@ export default {
   saveItem: function(itemData) {
     return axios.post("/api/items", itemData);
   },
-  signUpUser: function(userData){
-    return axios.post("/api/signup");
+  signInUser: function(userData){
+    return axios.post("/api/login", userData)
   },
-  signInUser: functi
+  signUpUser: function(userData){
+    return axios.post("/api/signup", userData);
+  },
+  logOutUser: function(userData){
+    return axios.post("/logout", userData)
+  }
 };

@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Archive from "./pages/Archive";
 import NewItems from "./pages/FrontPage";
 import Navbar from "./components/Navbar/navbar";
-import Jumbotron from "./components/Jumbotron/jumbotron";
-
+import IndividualItems from "./pages/ItemPage";
 
 
 function App() {
@@ -12,13 +11,12 @@ function App() {
         <Router>
             <div>
                 <Navbar/>
-                <Jumbotron>
-                 <h1>Merch Search</h1>
-                 </Jumbotron>
+                
                
                 <Switch>
                     <Route exact path="/archive" component={Archive} />
                     <Route exact path="/" component={NewItems} />
+                    <Route exact path="/items/:id" component={IndividualItems} />
                 </Switch>
             </div>
         </Router>
