@@ -322,7 +322,7 @@ class EnhancedTable extends React.Component {
                                             <TableCell align="left">{item.artist}</TableCell>
                                             <TableCell align="left">{item.type}</TableCell>
                                             <TableCell align="left">{item.desc}</TableCell>
-                                            <TableCell align="left">{item.releaseinfo}</TableCell>
+                                            <TableCell align="left">{item.release}</TableCell>
                                             <TableCell align="left">{item.color}</TableCell>
                                             <TableCell align="left">{item.brand}</TableCell>
                                         </TableRow>
