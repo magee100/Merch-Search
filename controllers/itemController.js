@@ -21,6 +21,13 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
 
+    findById: function(req, res) {
+        db.Item
+          .findById(req.params.id)
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+      },
+
     addItem: function(req, res) {
         db.Item
           .create(req.body)

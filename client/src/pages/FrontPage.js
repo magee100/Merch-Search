@@ -1,10 +1,23 @@
 import React, { Component} from "react";
+import { withStyles } from '@material-ui/core/styles';
+import Jumbotron from "../components/Jumbotron/jumbotron";
 import API from "../utils/API";
 import { Container } from "../components/Grid/grid";
 import Shirt from "../components/Shirt-module/shirt-module";
 
+const styles = theme => ({
+p: {
+textAlign: "auto",
+    },
 
-class NewItems extends Component {
+h: {
+    marginTop: 80,
+    marginLeft: 30,
+    fontSize: 50,
+    },
+
+})
+class NewItems extends React.Component {
     state = {
         items: [],
     };
@@ -21,15 +34,37 @@ class NewItems extends Component {
             .catch(err => console.log(err));
     };
 
-    // {item.artist} | {item.type} | {item.desc} | {item.color} | {item.brand} | <img width="150px" height="200px" src={item.photo}></img> | {item.date}
-
     render() {
+        const { classes } =this.props;
+
         return (
             <Container 
-            // fluid
+            
             >
-            <h1>Newest Items</h1>
+            {/* <Jumbotron>
+                 <h1>Welcome to Merch Search</h1>
+                 <p
+                 className={classes.p}
+                 >
+                 Get Started By Clicking Here And Creating An Account</p>
+
+                 <p
+                 className={classes.p}
+                 >
+                 Then Click Here To Add An Item To The Archive
+                 </p>
+
+                 <p
+                 className={classes.p}
+                 >Last item added: ( A  TIME )</p>
+                 </Jumbotron> */}
+            <h1
+            className={classes.h}
+            >Newest Items
+            </h1>
+
             <Shirt />
+
             </Container>
         );
     }
@@ -38,4 +73,4 @@ class NewItems extends Component {
 
 
 
-export default NewItems;
+export default withStyles(styles)(NewItems);

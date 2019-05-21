@@ -25,6 +25,7 @@ const itemSeed =[
       release: "Sold at America's Hardcore 2017",
       date: new Date(Date.now())
   },
+
   {
     artist: "Vortex",
     type: "Shirt",
