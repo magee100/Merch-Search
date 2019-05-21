@@ -56,7 +56,7 @@ const rows = [
     { id: 'artist', numeric: false, disablePadding: false, label: 'Artist' },
     { id: 'type', numeric: false, disablePadding: false, label: 'Type' },
     { id: 'desc', numeric: false, disablePadding: false, label: 'Description' },
-    { id: 'releaseinfo', numeric: false, disablePadding: false, label: 'Release Info' },
+    { id: 'release', numeric: false, disablePadding: false, label: 'Release Info' },
     { id: 'color', numeric: false, disablePadding: false, label: 'Color' },
     { id: 'brand', numeric: false, disablePadding: false, label: 'Brand' },
 ];
