@@ -53,13 +53,12 @@ function getSorting(order, orderBy) {
 
 const rows = [
     { id: 'image', numeric: false, disablePadding: true, label: 'Image' },
-    { id: 'band', numeric: false, disablePadding: true, label: 'Band' },
-    { id: 'artist', numeric: true, disablePadding: false, label: 'Artist' },
-    { id: 'type', numeric: true, disablePadding: false, label: 'Type' },
-    { id: 'desc', numeric: true, disablePadding: false, label: 'Description' },
-    { id: 'releaseinfo', numeric: true, disablePadding: false, label: 'Release Info' },
-    { id: 'color', numeric: true, disablePadding: false, label: 'Color' },
-    { id: 'brand', numeric: true, disablePadding: false, label: 'Brand' },
+    { id: 'artist', numeric: false, disablePadding: false, label: 'Artist' },
+    { id: 'type', numeric: false, disablePadding: false, label: 'Type' },
+    { id: 'desc', numeric: false, disablePadding: false, label: 'Description' },
+    { id: 'releaseinfo', numeric: false, disablePadding: false, label: 'Release Info' },
+    { id: 'color', numeric: false, disablePadding: false, label: 'Color' },
+    { id: 'brand', numeric: false, disablePadding: false, label: 'Brand' },
 ];
 
 class EnhancedTableHead extends React.Component {
@@ -222,7 +221,7 @@ class EnhancedTable extends React.Component {
     loadItems = () => {
         API.getItems()
             .then(res =>
-                this.setState({ items: res.data, })
+                this.setState({ data: res.data, })
             )
             .catch(err => console.log(err));
     };
@@ -298,31 +297,34 @@ class EnhancedTable extends React.Component {
                         <TableBody>
                             {stableSort(data, getSorting(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                                .map(n => {
-                                    const isSelected = this.isSelected(n.id);
+                                .map(item => {
+                                    const isSelected = this.isSelected(item.id);
                                     return (
                                         <TableRow
                                             hover
-                                            onClick={event => this.handleClick(event, n.id)}
+                                            onClick={event => this.handleClick(event, item.id)}
                                             role="checkbox"
                                             aria-checked={isSelected}
                                             tabIndex={-1}
-                                            key={n.id}
+                                            key={item.id}
                                             selected={isSelected}
                                         >
                                             <TableCell padding="checkbox">
                                                 <Checkbox checked={isSelected} />
                                             </TableCell>
-                                            <TableCell component="th" scope="row" padding="none">
-                                                {n.band}
+                                            <TableCell align="left">
+                                                <img
+                                                    height="50px"
+                                                    width="50px"
+                                                    src={item.photo}
+                                                />
                                             </TableCell>
-                                            <TableCell align="right">{n.photo}</TableCell>
-                                            <TableCell align="right">{n.artist}</TableCell>
-                                            <TableCell align="right">{n.type}</TableCell>
-                                            <TableCell align="right">{n.desc}</TableCell>
-                                            <TableCell align="right">{n.releaseinfo}</TableCell>
-                                            <TableCell align="right">{n.color}</TableCell>
-                                            <TableCell align="right">{n.band}</TableCell>
+                                            <TableCell align="left">{item.artist}</TableCell>
+                                            <TableCell align="left">{item.type}</TableCell>
+                                            <TableCell align="left">{item.desc}</TableCell>
+                                            <TableCell align="left">{item.releaseinfo}</TableCell>
+                                            <TableCell align="left">{item.color}</TableCell>
+                                            <TableCell align="left">{item.brand}</TableCell>
                                         </TableRow>
                                     );
                                 })}
