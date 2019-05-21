@@ -33,6 +33,7 @@
     "if-env": "^1.0.4",
     "moment": "^2.24.0",
     "mongoose": "^5.5.8",
+    "react-search-box": "^2.0.1"
     "react-images": "^0.5.19"
   },
   "devDependencies": {

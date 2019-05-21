@@ -1,11 +1,9 @@
 const mongoose = require("mongoose");
 const db = require("../models");
-
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/merchdb"
 );
-
 const itemSeed =[
      {
         artist: "Krust",
@@ -17,7 +15,6 @@ const itemSeed =[
         release: "Paradise In Brick Pre-order, Sold at shows in 2016",
         date: new Date(Date.now())
     },
-
     {
       artist: "Illusion",
       type: "Sweatshirt",
@@ -39,7 +36,6 @@ const itemSeed =[
     release: "",
     date: new Date(Date.now())
 },
-
 {
   artist: "The Real Cost",
   type: "Shirt",
@@ -50,7 +46,6 @@ const itemSeed =[
   release: "Sold on summer 2017 west coast tour",
   date: new Date(Date.now())
 },
-
 {
   artist: "Wise",
   type: "Shirt",
@@ -61,7 +56,6 @@ const itemSeed =[
   release: "Sold on winter 2018 west coast tour",
   date: new Date(Date.now())
 },
-
 {
   artist: "Wild Side",
   type: "Shirt",
@@ -72,7 +66,6 @@ const itemSeed =[
   release: "",
   date: new Date(Date.now())
 },
-
 {
   artist: "Big Contest",
   type: "Shirt",
@@ -83,7 +76,6 @@ const itemSeed =[
   release: "",
   date: new Date(Date.now())
 },
-
 {
   artist: "Red Death",
   type: "Shirt",
@@ -94,7 +86,6 @@ const itemSeed =[
   release: "",
   date: new Date(Date.now())
 },
-
 {
   artist: "Mil-Spec",
   type: "Longsleeve",
@@ -105,7 +96,6 @@ const itemSeed =[
   release: "Sold at AHC 2018",
   date: new Date(Date.now())
 },
-
 {
   artist: "Overload of Natural Energy",
   type: "Shirt",
@@ -116,7 +106,6 @@ const itemSeed =[
   release: "",
   date: new Date(Date.now())
 },
-
 {
   artist: "Iron Age",
   type: "Shirt",
@@ -128,7 +117,6 @@ const itemSeed =[
   date: new Date(Date.now())
 },
 ];
-
 db.Item
   .remove({})
   .then(() => db.Item.collection.insertMany(itemSeed))

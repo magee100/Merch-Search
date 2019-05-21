@@ -6,8 +6,6 @@ import Navbar from "./components/Navbar/navbar";
 import IndividualItems from "./pages/ItemPage";
 
 
-
-
 function App() {
     return (
         <Router>
