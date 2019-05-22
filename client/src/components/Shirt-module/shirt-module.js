@@ -26,6 +26,7 @@ import Grid from '@material-ui/core/Grid';
 import classNames from 'classnames';
 import { Container } from "../Grid/grid";
 import API from "../../utils/API";
+import Lightbox from "../Lightbox/card-lightbox"
 
 const styles = theme => ({
     card: {
@@ -119,11 +120,9 @@ class Shirt extends Component {
                                             </Link>
                                         }
                                     />
-                                    <CardMedia
-                                        className={classes.media}
-                                        image={item.photo}
-                                        title="item-Image"
-                                    />
+                                    <CardMedia>
+                                        <Lightbox images={item.photo}/>
+                                    </CardMedia>
                                     <CardContent>
                                         <Typography component="p">
                                             Added on: {moment(item.date).format('MM/DD/YY hh:mm A')}
