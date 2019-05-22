@@ -1,5 +1,5 @@
-const db = require("../database/models");
-const passport = require("../config/passport");
+const db = require("../../database/models");
+const passport = require("../../config/passport");
 
 module.exports = function(app){
     app.post("/api/login", passport.authenticate("local"), function(req,res){
