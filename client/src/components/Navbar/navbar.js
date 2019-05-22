@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
 import "./style.css"
 import AddItemDialog from "../Add-Item-Btn/add-item-btn"
 import UserBtn from "../User-Btn/user-btn"
 import ArchiveBtn from "../Archive-Btn/archive-btn"
 import { Link } from "react-router-dom";
+// import SearchIcon from '@material-ui/icons/Search';
+// import InputBase from '@material-ui/core/InputBase';
 
 const styles = theme => ({
   root: {
@@ -66,6 +66,10 @@ const styles = theme => ({
     },
   },
 
+  sectionDesktop: {
+    marginLeft: 0,
+  },
+
 });
 
 class PrimarySearchAppBar extends React.Component {
@@ -81,27 +85,27 @@ class PrimarySearchAppBar extends React.Component {
       <div className={classes.root}>
         <AppBar position="fixed">
           <Toolbar>
-            
+
 
 
 
             <Typography id="nav-title" className={classes.title} variant="h6" color="inherit"
               noWrap
             >
-              <Link 
-              to="/"
-              variant="body1"
-              
-              
+              <Link
+                to="/"
+                variant="body1"
+
+
               >
 
                 Merch Search
-  
+
               </Link>
             </Typography>
 
 
-
+{/* 
             <div id="search-bar" className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
@@ -113,7 +117,7 @@ class PrimarySearchAppBar extends React.Component {
                   input: classes.inputInput,
                 }}
               />
-            </div>
+            </div> */}
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
 

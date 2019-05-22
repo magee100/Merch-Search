@@ -1,4 +1,6 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, 
+  // Component
+ } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -13,7 +15,15 @@ import API from "../../utils/API";
 import { types } from '../../utils/extraData';
 import "./style.css";
 
+const inputProps = {
+  fontSize: 10
+}
+
 const styles = theme => ({
+  // inputProps: {
+  //   fontSize: 10
+  // },
+
   ArtistControl: {
   },
 
@@ -23,26 +33,28 @@ const styles = theme => ({
   },
 
   DescControl: {
-    width: 500,
+    width: 505,
   },
 
   ColorControl: {
     width: 200,
-  },
-
-  ReleaseControl: {
-    width: 20,
-    marginLeft: 25,
+    marginRight: 25,
   },
 
   BrandControl: {
+    width: 225,
+    // marginLeft: 55,
+  },
+  
+  ReleaseControl: {
     width: 200,
-    marginLeft: 25,
+    // marginLeft: 25,
   },
 
   PhotoControl: {
-    width: 200,
+    width: 260,
     marginLeft: 25,
+    
   },
 
   dialogForm: {
@@ -95,7 +107,9 @@ class AddItemDialog extends React.Component {
 
   handleFormSubmit = event => {
     window.location.reload()
+
     this.state.item.photo = this.state.item.photo.split('\n');
+    
     API.saveItem(
       this.state.item
     )
@@ -134,7 +148,7 @@ class AddItemDialog extends React.Component {
             Fill out the form below and hit submit to add item to archive!
             </DialogContentText>
           <form className={classes.container}
-          style = {{width: 505}}
+          style = {{width: 520}}
           >
 
             <TextField
@@ -161,26 +175,8 @@ class AddItemDialog extends React.Component {
                   value={type}>{type}</MenuItem>
                 )}
             </TextField>
-         
-            <TextField
-              label="Color"
-              value={color}
-              onChange={this.handleChange('color')}
-              margin="normal"
-              variant="filled"
-              className={classes.ColorControl}
-            />
 
-            <TextField
-              label="Brand"
-              value={brand}
-              onChange={this.handleChange('brand')}
-              margin="normal"
-              variant="filled"
-              className={classes.BrandControl}
-            />
-
-            <TextField
+         <TextField
               label="Description"
               value={desc}
               variant="filled"
@@ -190,24 +186,52 @@ class AddItemDialog extends React.Component {
             />
 
             <TextField
+              label="Color"
+              value={color}
+              onChange={this.handleChange('color')}
+              margin="normal"
+              variant="filled"
+              className={classes.ColorControl}
+            />
+            
+            <TextField
               label="Release Info"
               value={release}
               onChange={this.handleChange('release')}
               margin="normal"
               variant="filled"
               multiline
-              rowsMax="2"
+              helperText="*Year Released, tour/fest, limited quantity"
+             
               classNames={classes.ReleaseControl}
               style = {{width: 280}}
             />
+
+            <TextField
+              label="Brand"
+              value={brand}
+              onChange={this.handleChange('brand')}
+              margin="normal"
+              helperText="* Gildan, Alstyle, Fruit of the Loom"
+              variant="filled"
+              className={classes.BrandControl}
+            />
+
+            
+
+            
         
             <TextField
               label="Photo Link"
+              placeholder="https://i.imgur.com/3sVR2eG.jpg"
               value={photo}
               onChange={this.handleChange('photo')}
               margin="normal"
               multiline
               variant="filled"
+              helperText=
+              "* Indent to Add Mutiple Photo Links"
+              inputProps={inputProps}
               className={classes.PhotoControl}
 
             />

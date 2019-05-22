@@ -136,6 +136,9 @@ const toolbarStyles = theme => ({
     title: {
         flex: '0 0 auto',
     },
+    tableTitle: {
+        
+    },
 });
 
 let EnhancedTableToolbar = props => {
@@ -153,8 +156,10 @@ let EnhancedTableToolbar = props => {
                         {numSelected} selected
           </Typography>
                 ) : (
-                        <Typography variant="h6" id="tableTitle">
-                            Nutrition
+                        <Typography variant="h3" id="tableTitle"
+                        
+                        >
+                            Archive
           </Typography>
                     )}
             </div>
@@ -188,14 +193,17 @@ EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
 const styles = theme => ({
     root: {
         width: '100%',
-        marginTop: theme.spacing.unit * 3,
+        // marginTop: theme.spacing.unit * 3,
+        marginTop: 90
     },
     table: {
         minWidth: 1020,
+        // marginTop: 500,
     },
     tableWrapper: {
         overflowX: 'auto',
     },
+
 });
 
 class EnhancedTable extends React.Component {
@@ -213,7 +221,7 @@ class EnhancedTable extends React.Component {
     }
 
     loadItems = () => {
-        API.getItems()
+        API.getArchive()
             .then(res =>
                 this.setState({ data: res.data, })
             )
@@ -277,7 +285,9 @@ class EnhancedTable extends React.Component {
 
         return (
             <Paper className={classes.root}>
-                <EnhancedTableToolbar numSelected={selected.length} />
+                <EnhancedTableToolbar
+                className={classes.table}
+                numSelected={selected.length} />
                 <div className={classes.tableWrapper}>
                     <Table className={classes.table} aria-labelledby="tableTitle">
                         <EnhancedTableHead
@@ -333,7 +343,7 @@ class EnhancedTable extends React.Component {
                     </Table>
                 </div>
                 <TablePagination
-                    rowsPerPageOptions={[5, 10, 25]}
+                    rowsPerPageOptions={[5, 10, 25, 50, 100]}
                     component="div"
                     count={data.length}
                     rowsPerPage={rowsPerPage}

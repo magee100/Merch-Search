@@ -10,12 +10,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+// import MoreVertIcon from '@material-ui/icons/MoreVert';
 //card----------------------------------------------------
 // import Paper from '@material-ui/core/Paper';
 // import { List, ListItem } from "../Lists/lists";
@@ -30,7 +30,7 @@ import API from "../../utils/API";
 const styles = theme => ({
     card: {
         maxWidth: 400,
-        
+
     },
 
     layout: {
@@ -38,14 +38,14 @@ const styles = theme => ({
         marginLeft: theme.spacing.unit * 3,
         marginRight: theme.spacing.unit * 3,
         [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-        //   width: 1100,
-          marginLeft: 50,
-          marginRight: 50,
+            //   width: 1100,
+            marginLeft: 50,
+            marginRight: 50,
         },
-      },
-      cardGrid: {
+    },
+    cardGrid: {
         // padding: `${theme.spacing.unit * 8}px 0`,
-      },
+    },
 
     media: {
         height: 200,
@@ -97,31 +97,27 @@ class Shirt extends Component {
         return (
             <Container
             //  fluid
-             >
+            >
 
-            <div className={classNames(classes.layout, classes.cardGrid)}>
-                    <Grid 
-                    container 
-                    justify="space-around"
-                    spacing={40}
+                <div className={classNames(classes.layout, classes.cardGrid)}>
+                    <Grid
+                        container
+                        justify="space-around"
+                        spacing={40}
                     >
-                        {this.state.items.map(item => (
-                                <Grid item sm={6} md={4} lg={4}>
+                        {this.state.items.slice(0,15).map(item => (
+                            <Grid item sm={6} md={4} lg={4}>
                                 <Card className={classes.card} key={item._id}>
                                     <CardHeader
-                                        avatar={
-                                            <Avatar aria-label="Item" className={classes.avatar}>
-                                                <Link to={"/items/" + item._id}>Item</Link>
-                                            </Avatar>
+
+                                        title={item.artist}
+                                    
+                                        subheader=
+                                        {
+                                            <Link to={"/items/" + item._id}>
+                                                {item.desc}
+                                            </Link>
                                         }
-                                        action={
-                                            <IconButton>
-                                                <MoreVertIcon />
-                                            </IconButton>
-                                        }
-                                        title={item.artist} 
-                                        
-                                        subheader={item.desc}
                                     />
                                     <CardMedia
                                         className={classes.media}
@@ -158,13 +154,13 @@ class Shirt extends Component {
                                         </CardContent>
                                     </Collapse>
                                 </Card>
-                                
-                                </Grid>
-                            
+
+                            </Grid>
+
                         ))}
-                        </Grid>
-                
-                    </div>
+                    </Grid>
+
+                </div>
 
             </Container>
         );
