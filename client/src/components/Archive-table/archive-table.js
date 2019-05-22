@@ -165,7 +165,7 @@ let EnhancedTableToolbar = props => {
                     )}
             </div>
             <div className={classes.spacer} />
-            <div className={classes.actions}>
+            {/* <div className={classes.actions}>
                 {numSelected > 0 ? (
                     <Tooltip title="Delete">
                         <IconButton aria-label="Delete">
@@ -179,7 +179,7 @@ let EnhancedTableToolbar = props => {
                             </IconButton>
                         </Tooltip>
                     )}
-            </div>
+            </div> */}
         </Toolbar>
     );
 };
@@ -214,7 +214,7 @@ class EnhancedTable extends React.Component {
         selected: [],
         data: [],
         page: 0,
-        rowsPerPage: 5,
+        rowsPerPage: 25,
     };
 
     componentDidMount() {
