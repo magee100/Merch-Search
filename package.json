@@ -34,6 +34,7 @@
     "lightbox-react": "^0.3.7",
     "moment": "^2.24.0",
     "mongoose": "^5.5.8",
+    "react-image-lightbox": "^5.1.0",
     "react-images": "^0.5.19",
     "react-search-box": "^2.0.1"
   },
