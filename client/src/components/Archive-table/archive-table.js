@@ -20,7 +20,7 @@ import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import Lightbox from '../Lightbox/lightbox';
+import Lightbox from '../Lightbox/archive-lightbox';
 
 function desc(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -318,7 +318,7 @@ class EnhancedTable extends React.Component {
                                                 <Checkbox checked={isSelected} />
                                             </TableCell>
                                             <TableCell align="left">
-                                                <Lightbox className={classes.lightbox} images={item.photo} />
+                                                <Lightbox images={item.photo} />
                                             </TableCell>
                                             <TableCell align="left">{item.artist}</TableCell>
                                             <TableCell align="left">{item.type}</TableCell>
