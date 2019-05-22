@@ -1,16 +1,18 @@
-import React, { Component } from "react";
+import React, { 
+    // Component 
+} from "react";
 import { withStyles } from '@material-ui/core/styles';
-// import Jumbotron from "../components/Jumbotron/jumbotron";
-// import API from "../utils/API";
-import { 
-    // Col, Row, 
-    Container 
-} from "../components/Grid/grid"
-// import { Link } from "react-router-dom";
-// import CardMedia from '@material-ui/core/CardMedia';
-// import { Typography } from "@material-ui/core";
-import IndividualItems from "../components/Item-table/item-table"
+import Jumbotron from "../Jumbotron/jumbotron";
+import API from "../../utils/API"
+import {
+    //  Col, Row, 
+     Container } from "../Grid/grid"
+import { Link } from "react-router-dom";
+import CardMedia from '@material-ui/core/CardMedia';
+import { Typography } from "@material-ui/core";
 // import PropTypes from 'prop-types';
+
+
 
 const styles = theme => ({
     media: {
@@ -26,25 +28,32 @@ const styles = theme => ({
     
 })
 
-class SingleItemPage extends Component {
+class IndividualItems extends React.Component {
 
-    // state = {
-    //     item: {}
-    // };
+    state = {
+        item: {},
+       
+    };
 
-    // componentDidMount() {
-    //     API.getItem(this.props.match.params.id).then(({ data }) => this.setState({
-    //         item: data
-    //     }))
-    // }
+    componentDidMount() {
+        this.loadItem();
+    }
+
+    loadItem = () => {
+        API.getItem(this.props.id).then(({ data }) => this.setState({
+            item: data
+        }))
+    };
+
+
 
     render() {
-        // const { classes } = this.props;
+        const { classes } = this.props;
         return (
             <Container >
                 
                       
-                        {/* <Jumbotron>
+                        <Jumbotron>
                             
                             <h1
                             className={classes.itemDesc}
@@ -76,14 +85,12 @@ class SingleItemPage extends Component {
                 
                     
                         <Link to="/">← head home</Link>
-                     */}
-                        <IndividualItems
-                        id={this.props.match.params.id}
-                        />
+                    
                 
+                     
             </Container>
         );
     }
 };
 
-export default withStyles(styles)(SingleItemPage);
+export default withStyles(styles)(IndividualItems);

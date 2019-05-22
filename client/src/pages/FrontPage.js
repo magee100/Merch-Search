@@ -1,6 +1,8 @@
-import React, { Component} from "react";
+import React, { 
+    // Component
+} from "react";
 import { withStyles } from '@material-ui/core/styles';
-import Jumbotron from "../components/Jumbotron/jumbotron";
+// import Jumbotron from "../components/Jumbotron/jumbotron";
 import API from "../utils/API";
 import { Container } from "../components/Grid/grid";
 import Shirt from "../components/Shirt-module/shirt-module";

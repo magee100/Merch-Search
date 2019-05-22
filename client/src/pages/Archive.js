@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron/jumbotron"
+// import Jumbotron from "../components/Jumbotron/jumbotron"
 import { Container } from "../components/Grid/grid";
 import ArchiveTable from "../components/Archive-table/archive-table"
 import { withStyles } from '@material-ui/core/styles';
@@ -18,17 +18,17 @@ const styles = theme => ({
 
 class Archive extends Component {
     render() {
-        const { classes } = this.props;
+        // const { classes } = this.props;
         return (
             <Container fluid>
                 {/* <Jumbotron>
                     <h1>Merch Archive</h1>
                 </Jumbotron> */}
 
-                <h1
+                {/* <h1
                     className={classes.h}
                 >Archive
-                </h1>
+                </h1> */}
 
 
 
