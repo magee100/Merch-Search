@@ -308,16 +308,16 @@ class EnhancedTable extends React.Component {
                                                 <Checkbox checked={isSelected} />
                                             </TableCell>
                                             <TableCell align="left">
-                                                <Lightbox images={item.photo}/>
+                                                <Lightbox className={classes.lightbox} images={item.photo} />
                                             </TableCell>
                                             <TableCell align="left">{item.artist}</TableCell>
                                             <TableCell align="left">{item.type}</TableCell>
 
                                             <TableCell align="left">
-                                            <Link to={"/items/" + item._id}>{item.desc}</Link>
+                                                <Link to={"/items/" + item._id}>{item.desc}</Link>
                                             </TableCell>
 
-                                            
+
 
                                             <TableCell align="left">{item.release}</TableCell>
                                             <TableCell align="left">{item.color}</TableCell>

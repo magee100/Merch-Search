@@ -19,9 +19,9 @@ export default class LightboxExample extends Component {
       <div>
         <img
           onClick={() => this.setState({ isOpen: true })}
-          width="50px"
-          height="50px"
           src={this.props.images}
+          height="70"
+          width="70"
         />
 
         {isOpen && (
