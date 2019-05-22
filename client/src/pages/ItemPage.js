@@ -1,46 +1,54 @@
 import React, { Component } from "react";
 import { withStyles } from '@material-ui/core/styles';
-import Jumbotron from "../components/Jumbotron/jumbotron";
-import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid/grid"
-import { Link } from "react-router-dom";
-import CardMedia from '@material-ui/core/CardMedia';
-
+// import Jumbotron from "../components/Jumbotron/jumbotron";
+// import API from "../utils/API";
+import { 
+    // Col, Row, 
+    Container 
+} from "../components/Grid/grid"
+// import { Link } from "react-router-dom";
+// import CardMedia from '@material-ui/core/CardMedia';
+// import { Typography } from "@material-ui/core";
+import IndividualItems from "../components/Item-table/item-table"
+// import PropTypes from 'prop-types';
 
 const styles = theme => ({
     media: {
-        height: 400,
-        width: 400,
+        height: 300,
+        width: 300,
     },
     artistHeader: {
         textAlign: "auto",
         fontSize: 40,
         margin: 0,
-    }
+    },
+
+    
 })
 
-class IndividualItems extends Component {
+class SingleItemPage extends Component {
 
-    state = {
-        item: {}
-    };
+    // state = {
+    //     item: {}
+    // };
 
-    componentDidMount() {
-        API.getItem(this.props.match.params.id).then(({ data }) => this.setState({
-            item: data
-        }))
-    }
+    // componentDidMount() {
+    //     API.getItem(this.props.match.params.id).then(({ data }) => this.setState({
+    //         item: data
+    //     }))
+    // }
 
     render() {
-        const { classes } = this.props;
+        // const { classes } = this.props;
         return (
-            <Container fluid>
-                <Row>
-                    <Col size="md-12">
+            <Container >
+                
                       
-                        <Jumbotron>
+                        {/* <Jumbotron>
                             
-                            <h1>
+                            <h1
+                            className={classes.itemDesc}
+                            >
                                 {this.state.item.desc} 
                             </h1>
                             <h2
@@ -54,26 +62,28 @@ class IndividualItems extends Component {
                                 title="item-Image"
                             />
                         </Jumbotron>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col size="md-10 md-offset-1">
-                        <article>
-                            <h1>Info</h1>
+                    
+                        <Jumbotron> <h1>Info</h1>
                             <p>Release: {this.state.item.release}</p>
                             <p>Color: {this.state.item.color}</p>
-                            <p>Brand: {this.state.item.brand}</p>
-                        </article>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col size="md-2">
+                            <p>Brand: {this.state.item.brand}</p></Jumbotron>
+                    
+                        <Typography>
+                           
+                        </Typography>
+                   
+                
+                
+                    
                         <Link to="/">← head home</Link>
-                    </Col>
-                </Row>
+                     */}
+                        <IndividualItems
+                        id={this.props.match.params.id}
+                        />
+                
             </Container>
         );
     }
 };
 
-export default withStyles(styles)(IndividualItems);
+export default withStyles(styles)(SingleItemPage);

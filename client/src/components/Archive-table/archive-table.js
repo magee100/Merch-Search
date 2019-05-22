@@ -20,6 +20,7 @@ import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
+import Lightbox from '../Lightbox/archive-lightbox';
 
 function desc(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -136,6 +137,9 @@ const toolbarStyles = theme => ({
     title: {
         flex: '0 0 auto',
     },
+    tableTitle: {
+        
+    },
 });
 
 let EnhancedTableToolbar = props => {
@@ -153,8 +157,10 @@ let EnhancedTableToolbar = props => {
                         {numSelected} selected
           </Typography>
                 ) : (
-                        <Typography variant="h6" id="tableTitle">
-                            Nutrition
+                        <Typography variant="h3" id="tableTitle"
+                        
+                        >
+                            Archive
           </Typography>
                     )}
             </div>
@@ -188,14 +194,17 @@ EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
 const styles = theme => ({
     root: {
         width: '100%',
-        marginTop: theme.spacing.unit * 3,
+        // marginTop: theme.spacing.unit * 3,
+        marginTop: 90
     },
     table: {
         minWidth: 1020,
+        // marginTop: 500,
     },
     tableWrapper: {
         overflowX: 'auto',
     },
+
 });
 
 class EnhancedTable extends React.Component {
@@ -213,7 +222,7 @@ class EnhancedTable extends React.Component {
     }
 
     loadItems = () => {
-        API.getItems()
+        API.getArchive()
             .then(res =>
                 this.setState({ data: res.data, })
             )
@@ -277,7 +286,9 @@ class EnhancedTable extends React.Component {
 
         return (
             <Paper className={classes.root}>
-                <EnhancedTableToolbar numSelected={selected.length} />
+                <EnhancedTableToolbar
+                className={classes.table}
+                numSelected={selected.length} />
                 <div className={classes.tableWrapper}>
                     <Table className={classes.table} aria-labelledby="tableTitle">
                         <EnhancedTableHead
@@ -307,20 +318,16 @@ class EnhancedTable extends React.Component {
                                                 <Checkbox checked={isSelected} />
                                             </TableCell>
                                             <TableCell align="left">
-                                                <img
-                                                    height="50px"
-                                                    width="50px"
-                                                    src={item.photo}
-                                                />
+                                                <Lightbox images={item.photo} />
                                             </TableCell>
                                             <TableCell align="left">{item.artist}</TableCell>
                                             <TableCell align="left">{item.type}</TableCell>
 
                                             <TableCell align="left">
-                                            <Link to={"/items/" + item._id}>{item.desc}</Link>
+                                                <Link to={"/items/" + item._id}>{item.desc}</Link>
                                             </TableCell>
 
-                                            
+
 
                                             <TableCell align="left">{item.release}</TableCell>
                                             <TableCell align="left">{item.color}</TableCell>
@@ -337,7 +344,7 @@ class EnhancedTable extends React.Component {
                     </Table>
                 </div>
                 <TablePagination
-                    rowsPerPageOptions={[5, 10, 25]}
+                    rowsPerPageOptions={[5, 10, 25, 50, 100]}
                     component="div"
                     count={data.length}
                     rowsPerPage={rowsPerPage}
