@@ -124,7 +124,7 @@ const itemSeed =[
   color: "otherwise its  fucked",
   brand: "get  it  right get it tight",
   photo: ["https://i.imgur.com/VZWZDrh.jpg",
-  "https://i.imgur.com/VZWZDrh.jpg",
+  "https://i.imgur.com/GArniri.jpg",
   "https://i.imgur.com/VZWZDrh.jpg"],
   release: "FLAVA FLAAAVVVVV",
   date: new Date(Date.now())
