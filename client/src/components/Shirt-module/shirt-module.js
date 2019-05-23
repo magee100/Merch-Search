@@ -21,6 +21,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // import { List, ListItem } from "../Lists/lists";
 // import FavoriteIcon from '@material-ui/icons/Favorite';
 // import ShareIcon from '@material-ui/icons/Share';
+import Expand from "../Card-Expand/card-expand"
+
 import { Link } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import classNames from 'classnames';
@@ -71,11 +73,14 @@ const styles = theme => ({
 });
 
 class Shirt extends Component {
-    state = {
+    constructor(props){
+        super(props);
+   
+    this.state = {
         expanded: false,
         items: [],
     };
-
+ }
     componentDidMount() {
         this.loadItems();
     }
@@ -132,7 +137,9 @@ class Shirt extends Component {
                                         {/* <IconButton aria-label="Add to favorites">
                                             <FavoriteIcon />
                                         </IconButton> */}
-                                        <IconButton
+
+
+                                        {/* <IconButton
                                             className={classnames(classes.expand, {
                                                 [classes.expandOpen]: this.state.expanded,
                                             })}
@@ -141,7 +148,11 @@ class Shirt extends Component {
                                             aria-label="Show more"
                                         >
                                             <ExpandMoreIcon />
-                                        </IconButton>
+                                        </IconButton> */}
+
+                                        {/* <Expand triggerParentUpdate={this.handleExpandClick }
+                                        /> */}
+
                                     </CardActions>
                                     <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
                                         <CardContent>
