@@ -55,13 +55,12 @@ class UserBtn extends Component {
   }
 
   handleLoginSubmit = event => {
-    event.preventDefault();
+    window.location.reload();
     console.log(this.state.loginEmail, this.state.loginPassword);
     API.signInUser({
       email: this.state.loginEmail,
       password: this.state.loginPassword
-    })
-    ;
+    });
   }
 
   handleCreateSubmit = event => {

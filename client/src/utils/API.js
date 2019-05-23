@@ -31,5 +31,8 @@ export default {
   },
   checkIfLoggedIn: function(){
     return axios.get("/api/user_data")
-  }
+  },
+  
+
+
 };
