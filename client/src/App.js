@@ -37,7 +37,7 @@ class App extends Component {
     //     });
     // }
 
-    // handleCreateSubmit = event => {
+    // handleCreateSubmit = Bevent => {
     //     event.preventDefault();
     //     console.log(this.state.signUpEmail, this.state.signUpPassword);
     //     API.signUpUser({

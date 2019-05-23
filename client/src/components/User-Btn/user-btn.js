@@ -72,6 +72,14 @@ class UserBtn extends Component {
     })
     ;
   }
+// adding logout 
+  handleLogoutSubmit = event => {
+    API.logOutUser({
+
+    }).then(result => {
+      window.location.reload();
+    })
+  }
 
 
   render() {
