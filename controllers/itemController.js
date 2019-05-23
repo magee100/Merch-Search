@@ -12,11 +12,18 @@ module.exports = {
     },
 
     findNew: function (req, res) {
+        console.log(req.query);
         db.Item
             .find(req.query)
+            
             .sort({
+                
                 date: -1
-            }).then(dbModel => res.json(dbModel)
+
+            }).then(dbModel => {
+                console.log("success", dbModel);
+                res.json(dbModel)
+            }
             )
             .catch(err => res.status(422).json(err));
     },

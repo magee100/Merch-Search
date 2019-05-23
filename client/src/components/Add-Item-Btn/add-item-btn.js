@@ -113,7 +113,6 @@ class AddItemDialog extends React.Component {
     API.saveItem(
       this.state.item
     )
-      
       .then(this.loadItems())
       .then(this.setState({
         open: !this.state.open
@@ -147,6 +146,9 @@ class AddItemDialog extends React.Component {
           <DialogContentText>
             Fill out the form below and hit submit to add item to archive!
             </DialogContentText>
+
+            
+
           <form className={classes.container}
           style = {{width: 520}}
           >
@@ -158,6 +160,7 @@ class AddItemDialog extends React.Component {
               margin="normal"
               classNames={classes.ArtistControl}
               variant="filled"
+              helperText="*Case Sensitive"
               style = {{width: 280}}
             />
 

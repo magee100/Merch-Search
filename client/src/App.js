@@ -8,6 +8,7 @@ import userSignUp from "./components/Sign-Up-Btn/sign-up-btn"
 import userSignIn from "./components/Sign-In-Btn/sign-in-btn"
 import SingleItemPage from "./pages/ItemPage";
 import API from "./utils/API"
+import Footer from "./components/Footer/footer";
 
 class App extends Component {
     state = {
