@@ -21,7 +21,7 @@ import classNames from 'classnames';
 // import PropTypes from 'prop-types';
 
 const styles = theme => ({
-    
+
     artistHeader: {
         textAlign: "auto",
         fontSize: 40,
@@ -44,6 +44,7 @@ class IndividualItems extends React.Component {
 
     componentDidMount() {
         this.loadItem();
+        console.log(this.props.id);
     }
 
     loadItem = () => {
@@ -61,20 +62,14 @@ class IndividualItems extends React.Component {
                 <div
                     id="item-container">
 
-                        <h1
-                        id="itemArtist"
-                        >
-                        
-                        {this.state.item.artist}
-                        </h1>
 
-                    
 
-                    {/* <h1
+
+                    <h1
                         id="itemDesc"
                     >
                         {this.state.item.desc}
-                    </h1> */}
+                    </h1>
                     {/* <h2
                         className={classes.artistHeader}
                         id="itemArtist"
@@ -82,39 +77,31 @@ class IndividualItems extends React.Component {
 
                     </h2> */}
 
-<Grid container spacing={24}>
-<Grid item xs={1}/>
-
-
-<Grid item xs={2}>
-                    <CardMedia
-                        id="itemMedia"
-                        className={classes.media}>
-                        <Lightbox images={this.state.item.photo} />
-                    </CardMedia>
-                  </Grid>
-                  <Grid item xs={5}>
-                    <div
-                    id="infoBox"
-                    > 
-
-                        <p>
-                            Item Info: &nbsp;
-                            {this.state.item.desc}
-                        </p>
-                        <p>
-                            Release Info: &nbsp;{this.state.item.release}</p>
-                        <p>
-                            Color: &nbsp;
+                    <Grid container spacing={24}>
+                        <Grid item xs={2}>
+                            <CardMedia
+                                id="itemMedia"
+                                className={classes.media}>
+                                <Lightbox images={this.state.item.photo} />
+                            </CardMedia>
+                        </Grid>
+                        <Grid item xs={8}>
+                            <div
+                                id="infoBox"
+                            > <h1>{this.state.item.artist}</h1>
+                                <p>
+                                    Release Info: {this.state.item.release}</p>
+                                <p>
+                                    Color:
                         {this.state.item.color}</p>
-                        <p>
-                            Brand: &nbsp;
+                                <p>
+                                    Brand:
                         {this.state.item.brand}</p>
-                    </div>
-                    
+                            </div>
+
+                        </Grid>
                     </Grid>
-                    </Grid>
-                   
+
 
 
                 </div>
