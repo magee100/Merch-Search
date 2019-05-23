@@ -31,7 +31,7 @@ class SingleItemPage extends Component {
         return (
             <Container >
                         <IndividualItems
-                        id={this.props.match.params.id}
+                        id={this.props.id}
                         />
             </Container>
         );

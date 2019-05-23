@@ -63,7 +63,7 @@ class App extends Component {
                         <Route exact path="/" render={props => (
                             isLoggedIn ? <NewItems/> : <userSignIn/>)} />
                         <Route exact path="/items/:id" render={props => (
-                            isLoggedIn ? <IndividualItems/> : <userSignIn/>)} />
+                            isLoggedIn ? <SingleItemPage id={this.props.match.params.id}/> : <userSignIn/>)} />
                     </Switch>
                 </div>
             </Router>

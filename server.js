@@ -25,6 +25,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Add routes, both API and view
 require('./routes/api/api-routes')(app);
+
 app.use(routes);
 
 // requiring our routes
