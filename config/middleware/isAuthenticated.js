@@ -5,6 +5,7 @@ module.exports = function(req, res, next) {
       return next();
     }
   
+    console.log("FAILURELKDFJLJDKLFJDLJFJ")
     // If the user isn't' logged in, redirect them to the login page
     return res.redirect("/");
   };
@@ -16,3 +17,4 @@ module.exports = function(req, res, next) {
 
   // };
   
+

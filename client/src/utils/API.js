@@ -26,13 +26,10 @@ export default {
   signUpUser: function(userData){
     return axios.post("/api/signup", userData);
   },
-  logOutUser: function(userData){
-    return axios.post("/logout", userData)
+  logOutUser: function(){
+    return axios.get("/logout")
   },
   checkIfLoggedIn: function(){
     return axios.get("/api/user_data")
   },
-  
-
-
 };
