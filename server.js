@@ -39,7 +39,6 @@ app.use(routes);
 //   });
 // });
 
-mongoose.connect("mongodb://localhost:27017/api", {useNewUrlParser: true});
 
   app.listen(PORT, function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
