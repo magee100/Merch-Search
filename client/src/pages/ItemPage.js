@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { withStyles } from '@material-ui/core/styles';
 import IndividualItems from "../components/Item-table/item-table"
-import { 
+import {
     // Col, Row, 
-    Container 
+    Container
 } from "../components/Grid/grid"
 
 // import { Link } from "react-router-dom";
@@ -24,15 +24,15 @@ const styles = theme => ({
     //     margin: 0,
     // },
 
-    
+
 })
 class SingleItemPage extends Component {
     render() {
         return (
             <Container >
-                        <IndividualItems
-                        id={this.props.match.params.id}
-                        />
+                <IndividualItems
+                    id={this.props.id}
+                />
             </Container>
         );
     }
