@@ -21,7 +21,7 @@ import classNames from 'classnames';
 // import PropTypes from 'prop-types';
 
 const styles = theme => ({
-    
+
     artistHeader: {
         textAlign: "auto",
         fontSize: 40,
@@ -60,10 +60,6 @@ class IndividualItems extends React.Component {
             >
                 <div
                     id="item-container">
-
-
-                    
-
                     <h1
                         id="itemDesc"
                     >
@@ -76,32 +72,30 @@ class IndividualItems extends React.Component {
 
                     </h2> */}
 
-<Grid container spacing={24}>
-<Grid item xs={2}>
-                    <CardMedia
-                        id="itemMedia"
-                        className={classes.media}>
-                        <Lightbox images={this.state.item.photo} />
-                    </CardMedia>
-                  </Grid>
-                  <Grid item xs={8}>
-                    <div
-                    id="infoBox"
-                    > <h1>{this.state.item.artist}</h1>
-                        <p>
-                            Release Info: {this.state.item.release}</p>
-                        <p>
-                            Color: 
+                    <Grid container spacing={24}>
+                        <Grid item xs={2}>
+                            <CardMedia
+                                id="itemMedia"
+                                className={classes.media}>
+                                <Lightbox images={this.state.item.photo} />
+                            </CardMedia>
+                        </Grid>
+                        <Grid item xs={8}>
+                            <div
+                                id="infoBox"
+                            > <h1>{this.state.item.artist}</h1>
+                                <p>
+                                    Release Info: {this.state.item.release}</p>
+                                <p>
+                                    Color:
                         {this.state.item.color}</p>
-                        <p>
-                            Brand: 
+                                <p>
+                                    Brand:
                         {this.state.item.brand}</p>
-                    </div>
-                    
-                    </Grid>
-                    </Grid>
-                   
+                            </div>
 
+                        </Grid>
+                    </Grid>
 
                 </div>
 
