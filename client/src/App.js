@@ -4,6 +4,7 @@ import Archive from "./pages/Archive";
 import NewItems from "./pages/FrontPage";
 import Navbar from "./components/Navbar/navbar";
 import SingleItemPage from "./pages/ItemPage";
+import Footer from "./components/Footer/footer";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                     <Route exact path="/" component={NewItems} />
                     <Route exact path="/items/:id" component={SingleItemPage} />
                 </Switch>
+                <Footer/>
             </div>
         </Router>
     )

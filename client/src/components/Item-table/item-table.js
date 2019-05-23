@@ -8,22 +8,29 @@ import {
     //  Col, Row, 
     Container
 } from "../Grid/grid"
-import { Link } from "react-router-dom";
+
 import CardMedia from '@material-ui/core/CardMedia';
 import { Typography } from "@material-ui/core";
+import Lightbox from "../Lightbox/card-lightbox";
+import Grid from '@material-ui/core/Grid';
+import "./item-table.css"
+
+import { Link } from "react-router-dom";
+import classNames from 'classnames';
+
 // import PropTypes from 'prop-types';
-import Lightbox from "../Lightbox/card-lightbox"
 
 const styles = theme => ({
-    media: {
-        height: 300,
-        width: 300,
-    },
+    
     artistHeader: {
         textAlign: "auto",
         fontSize: 40,
         margin: 0,
     },
+
+    ItemContain: {
+
+    }
 
 
 })
@@ -48,41 +55,55 @@ class IndividualItems extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <Container >
+            <Container
+
+            >
+                <div
+                    id="item-container">
 
 
-                <Jumbotron>
+                    
 
                     <h1
-                        className={classes.itemDesc}
+                        id="itemDesc"
                     >
                         {this.state.item.desc}
                     </h1>
-                    <h2
+                    {/* <h2
                         className={classes.artistHeader}
+                        id="itemArtist"
                     >
-                        {this.state.item.artist}
-                    </h2>
-                    <CardMedia className={classes.media}>
-                        <Lightbox images={this.state.item.photo}/>
+
+                    </h2> */}
+
+<Grid container spacing={24}>
+<Grid item xs={2}>
+                    <CardMedia
+                        id="itemMedia"
+                        className={classes.media}>
+                        <Lightbox images={this.state.item.photo} />
                     </CardMedia>
-                </Jumbotron>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <div
+                    id="infoBox"
+                    > <h1>{this.state.item.artist}</h1>
+                        <p>
+                            Release Info: {this.state.item.release}</p>
+                        <p>
+                            Color: 
+                        {this.state.item.color}</p>
+                        <p>
+                            Brand: 
+                        {this.state.item.brand}</p>
+                    </div>
+                    
+                    </Grid>
+                    </Grid>
+                   
 
-                <Jumbotron> <h1>Info</h1>
-                    <p>Release: {this.state.item.release}</p>
-                    <p>Color: {this.state.item.color}</p>
-                    <p>Brand: {this.state.item.brand}</p></Jumbotron>
 
-                <Typography>
-
-                </Typography>
-
-
-
-
-                <Link to="/">← head home</Link>
-
-
+                </div>
 
             </Container>
         );

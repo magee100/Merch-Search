@@ -1,0 +1,10 @@
+#footerBox {
+    border-top: grey solid 3px; 
+    margin-top: 20px;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    line-height: 125px;
+    position: sticky;
+}
