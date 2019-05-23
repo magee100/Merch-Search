@@ -1,19 +1,23 @@
-var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
 
-var db = require("../models");
+const db = require("../database/models");
 
-// Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
+
+// CROSS CHECK WITH MONGOOSE SYNTAX ANYWHERE WITH DB Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(new LocalStrategy(
+  {
+    usernameField: "email"
+  },
   // Our user will sign in using an email, rather than a "username"
-  function(username, password, done) {
+  function(email, password, done) {
     // When a user tries to sign in this code runs
+    console.log(email, password)
     db.User.findOne({
-      where: {
-        username: username
-      }
-    }).then(function(dbUser) {
+        email: email
+      }).then(function(dbUser) {
       // If there's no user with the given email
+      console.log(dbUser);
       if (!dbUser) {
         return done(null, false, {
           message: "Incorrect email."

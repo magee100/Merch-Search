@@ -5,6 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Input from '@material-ui/core/Input';
+import API from '../../utils/API';
 import { withStyles } from '@material-ui/core/styles';
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import "./style.css"
@@ -34,13 +35,41 @@ const styles = theme => ({
 
 class UserBtn extends Component {
   state = {
-    open: false
+    open: false,
+    loginEmail: "",
+    loginPassword: "",
+    signUpEmail: "",
+    signUpPassword: ""
+  }
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value
+    })
   }
 
   handleToggle = () => {
     this.setState({
       open: !this.state.open
     })
+  }
+
+  handleLoginSubmit = event => {
+    event.preventDefault();
+    console.log(this.state.loginEmail, this.state.loginPassword);
+    API.signInUser({
+      email: this.state.loginEmail,
+      password: this.state.loginPassword
+    });
+  }
+
+  handleCreateSubmit = event => {
+    event.preventDefault();
+    console.log(this.state.signUpEmail, this.state.signUpPassword);
+    API.signUpUser({
+      email: this.state.signUpEmail,
+      password: this.state.signUpPassword
+    });
   }
 
 
@@ -72,6 +101,7 @@ class UserBtn extends Component {
             Fill out the form below and hit submit to add item to archive!
             </DialogContentText> */}
           <form
+            onSubmit={this.handleLoginSubmit}
             className={classes.container}
             style={{ width: 505 }}
           >
@@ -79,13 +109,16 @@ class UserBtn extends Component {
             <Input
               placeholder="Username/Email?"
               className={classes.input}
+              onChange={this.handleChange("loginEmail")}
               inputProps={{
                 'aria-label': 'Description',
               }}
             />
             <Input
+              type = "Password"
               placeholder="Password"
               className={classes.input}
+              onChange={this.handleChange("loginPassword")}
               inputProps={{
                 'aria-label': 'Description',
               }}
@@ -97,7 +130,7 @@ class UserBtn extends Component {
           <Button
             id="login-btn"
             color="primary"
-            onClick={this.handleFormSubmit}
+            onClick={this.handleLoginSubmit}
           >
             Log in
             </Button>
@@ -117,6 +150,7 @@ class UserBtn extends Component {
 
 
           <form
+            onSubmit={this.handleCreateSubmit}
             className={classes.container}
             style={{ width: 505 }}
           >
@@ -124,14 +158,16 @@ class UserBtn extends Component {
             <Input
               placeholder="Username/Email?"
               className={classes.input}
+              onChange={this.handleChange("signUpEmail")}
               inputProps={{
                 'aria-label': 'Description',
               }}
             />
             <Input
               placeholder="Password"
-              type="password"
+              type="Password"
               className={classes.input}
+              onChange={this.handleChange("signUpPassword")}
               inputProps={{
                 'aria-label': 'Description',
               }}
@@ -158,7 +194,7 @@ class UserBtn extends Component {
           <Button
             id="create-btn"
             color="primary"
-            onClick={this.handleFormSubmit}
+            onClick={this.handleCreateSubmit}
           >
             Create Account
             </Button>
