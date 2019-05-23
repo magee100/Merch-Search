@@ -47,7 +47,7 @@ function getSorting(order, orderBy) {
 }
 
 const rows = [
-    { id: 'image', numeric: false, disablePadding: true, label: 'Image' },
+    { id: 'image', numeric: false, disablePadding: false, label: 'Image' },
     { id: 'artist', numeric: false, disablePadding: false, label: 'Artist' },
     { id: 'type', numeric: false, disablePadding: false, label: 'Type' },
     { id: 'desc', numeric: false, disablePadding: false, label: 'Description' },

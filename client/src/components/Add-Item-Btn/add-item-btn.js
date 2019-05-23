@@ -113,7 +113,6 @@ class AddItemDialog extends React.Component {
     API.saveItem(
       this.state.item
     )
-      
       .then(this.loadItems())
       .then(this.setState({
         open: !this.state.open
