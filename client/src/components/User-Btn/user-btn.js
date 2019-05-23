@@ -107,7 +107,7 @@ class UserBtn extends Component {
           >
 
             <Input
-              placeholder="Username/Email?"
+              placeholder="Email"
               className={classes.input}
               onChange={this.handleChange("loginEmail")}
               inputProps={{
@@ -156,7 +156,7 @@ class UserBtn extends Component {
           >
 
             <Input
-              placeholder="Username/Email?"
+              placeholder="Email"
               className={classes.input}
               onChange={this.handleChange("signUpEmail")}
               inputProps={{

@@ -44,6 +44,7 @@ class IndividualItems extends React.Component {
 
     componentDidMount() {
         this.loadItem();
+        console.log(this.props.id);
     }
 
     loadItem = () => {
@@ -60,6 +61,10 @@ class IndividualItems extends React.Component {
             >
                 <div
                     id="item-container">
+
+
+
+
                     <h1
                         id="itemDesc"
                     >
@@ -96,6 +101,8 @@ class IndividualItems extends React.Component {
 
                         </Grid>
                     </Grid>
+
+
 
                 </div>
 
