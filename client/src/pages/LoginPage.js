@@ -1,6 +1,4 @@
-import React, { 
-    // Component
-} from "react";
+import React, { Component } from "react";
 import { withStyles } from '@material-ui/core/styles';
 // import Jumbotron from "../components/Jumbotron/jumbotron";
 import API from "../utils/API";
@@ -19,10 +17,8 @@ h: {
     },
 
 })
-class LoginPage extends React.Component {
-    state = {
-        items: [],
-    };
+export default class LoginPage extends Component {
+
     render() {
         const { classes } =this.props;
 
@@ -33,8 +29,3 @@ class LoginPage extends React.Component {
         );
     }
 };
-
-
-
-
-export default withStyles(styles)(LoginPage);
