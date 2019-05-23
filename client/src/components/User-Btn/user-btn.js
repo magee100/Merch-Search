@@ -77,7 +77,7 @@ class UserBtn extends Component {
           >
 
             <Input
-              placeholder="Username/Email?"
+              placeholder="Email"
               className={classes.input}
               inputProps={{
                 'aria-label': 'Description',
@@ -122,7 +122,7 @@ class UserBtn extends Component {
           >
 
             <Input
-              placeholder="Username/Email?"
+              placeholder="Email"
               className={classes.input}
               inputProps={{
                 'aria-label': 'Description',
