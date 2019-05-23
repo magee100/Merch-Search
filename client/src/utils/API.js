@@ -28,5 +28,8 @@ export default {
   },
   logOutUser: function(userData){
     return axios.post("/logout", userData)
+  },
+  checkIfLoggedIn: function(){
+    return axios.get("/api/user_data")
   }
 };
