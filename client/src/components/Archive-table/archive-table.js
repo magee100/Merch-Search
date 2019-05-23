@@ -309,7 +309,6 @@ class EnhancedTable extends React.Component {
                             {stableSort(data, getSorting(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map(item => {
-                                    const isSelected = this.isSelected(item._id);
                                     return (
                                         <TableRow
                                             hover
