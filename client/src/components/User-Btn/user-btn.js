@@ -88,7 +88,7 @@ class UserBtn extends Component {
 
     return <Fragment>
       <Button id="user-btn" variant="fab" onClick={this.handleToggle} mini >
-
+    
         <AccountCircle />
 
       </Button>
