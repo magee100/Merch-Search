@@ -7,11 +7,8 @@ import IndividualItems from "./pages/ItemPage";
 import userSignUp from "./components/Sign-Up-Btn/sign-up-btn"
 import userSignIn from "./components/Sign-In-Btn/sign-in-btn"
 import SingleItemPage from "./pages/ItemPage";
-<<<<<<< HEAD
 import Footer from "./components/Footer/footer";
-=======
 import API from "./utils/API"
->>>>>>> e6255de9dae2802d8509cdd0583f32a188ef4a23
 
 class App extends Component {
     state = {
@@ -73,23 +70,6 @@ class App extends Component {
         )
     }
 
-<<<<<<< HEAD
-function App() {
-    return (
-        <Router>
-            <div>
-                <Navbar/>
-                <Switch>
-                    <Route exact path="/archive" component={Archive} />
-                    <Route exact path="/" component={NewItems} />
-                    <Route exact path="/items/:id" component={SingleItemPage} />
-                </Switch>
-                <Footer/>
-            </div>
-        </Router>
-    )
-=======
->>>>>>> e6255de9dae2802d8509cdd0583f32a188ef4a23
 }
 
 export default App;
