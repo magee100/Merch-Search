@@ -115,6 +115,7 @@ class UserBtn extends Component {
               }}
             />
             <Input
+              type = "Password"
               placeholder="Password"
               className={classes.input}
               onChange={this.handleChange("loginPassword")}
@@ -164,7 +165,7 @@ class UserBtn extends Component {
             />
             <Input
               placeholder="Password"
-              type="password"
+              type="Password"
               className={classes.input}
               onChange={this.handleChange("signUpPassword")}
               inputProps={{
