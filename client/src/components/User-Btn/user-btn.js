@@ -60,7 +60,8 @@ class UserBtn extends Component {
     API.signInUser({
       email: this.state.loginEmail,
       password: this.state.loginPassword
-    });
+    })
+    ;
   }
 
   handleCreateSubmit = event => {

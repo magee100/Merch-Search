@@ -27,6 +27,7 @@ class App extends Component {
             }
             })
     }
+    
 // i want to be able to redirect to a new page onto a login/create User
 // passing those functions down --> change the state of user
     // handleLoginSubmit = event => {
@@ -38,7 +39,7 @@ class App extends Component {
     //     });
     // }
 
-    // handleCreateSubmit = event => {
+    // handleCreateSubmit = Bevent => {
     //     event.preventDefault();
     //     console.log(this.state.signUpEmail, this.state.signUpPassword);
     //     API.signUpUser({
