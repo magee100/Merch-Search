@@ -1,12 +1,11 @@
-import React from "react";
-import "./style.css"
+import React, { Component } from "react";
 
-function Jumbotron({ children }) {
-  return (
-    <div>
-      HELLOHELLOHELLOHELLOHELLOHELLO
-    </div>
-  );
+export default class Jumbotron extends Component {
+  render() {
+    return (
+      <div>
+        <h1>KLJSDLKLJDLKASJDLKSJDLKASJDLKJASDLKJSALDKJSAKLD</h1>
+      </div>
+    );
+  }
 }
-
-export default Jumbotron;
