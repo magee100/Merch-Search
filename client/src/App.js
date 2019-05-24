@@ -33,15 +33,15 @@ class App extends Component {
                     <Navbar/>
                     <Switch>
                         <Route exact path ="/userSignUp" render= {props => (
-                            isLoggedIn ? <NewItems/> : <userSignUp/>)} />
+                            isLoggedIn ? <NewItems/> : <LoginPage/>)} />
                         <Route exact path = "/userSignIn" render = {props => (
-                            isLoggedIn ? <NewItems/> : <userSignIn/>)}/>
+                            isLoggedIn ? <NewItems/> : <LoginPage/>)}/>
                         <Route exact path="/archive" render={props => (
-                            isLoggedIn ? <Archive/> : <userSignIn/>)} />
+                            isLoggedIn ? <Archive/> : <LoginPage/>)} />
                         <Route exact path="/" render={props => (
                             isLoggedIn ? <NewItems/> : <LoginPage/>)} />
                         <Route exact path="/items/:id" render={props => (
-                            isLoggedIn ? <SingleItemPage id={props.match.params.id}/> : <userSignIn/>)} />
+                            isLoggedIn ? <SingleItemPage id={props.match.params.id}/> : <LoginPage/>)} />
                     </Switch>
                     <Footer/>
                 </div>
