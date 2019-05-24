@@ -4,7 +4,6 @@ const LocalStrategy = require("passport-local").Strategy;
 const db = require("../database/models");
 
 
-// CROSS CHECK WITH MONGOOSE SYNTAX ANYWHERE WITH DB Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(new LocalStrategy(
   {
     usernameField: "email"

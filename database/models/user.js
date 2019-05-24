@@ -8,8 +8,17 @@ const UserSchema = new mongoose.Schema ({
     }, 
     password: {
         type: String, 
+        allowNull: false,
+    },
+    firstName: {
+        type: String,
+        allowNull: false,
+    },
+    lastName: {
+        type: String,
         allowNull: false
     }
+
 });
 
 
