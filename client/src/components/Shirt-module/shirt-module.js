@@ -3,26 +3,15 @@ import moment from 'moment';
 //card----------------------------------------------------
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-// import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
+// import CardActions from '@material-ui/core/CardActions';
+// import Collapse from '@material-ui/core/Collapse';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-// import MoreVertIcon from '@material-ui/icons/MoreVert';
 //card----------------------------------------------------
-// import Paper from '@material-ui/core/Paper';
-// import { List, ListItem } from "../Lists/lists";
-// import FavoriteIcon from '@material-ui/icons/Favorite';
-// import ShareIcon from '@material-ui/icons/Share';
-import Expand from "../Card-Expand/card-expand"
-
 import { Link } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import classNames from 'classnames';
@@ -41,13 +30,9 @@ const styles = theme => ({
         marginLeft: theme.spacing.unit * 3,
         marginRight: theme.spacing.unit * 3,
         [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-            //   width: 1100,
             marginLeft: 50,
             marginRight: 50,
         },
-    },
-    cardGrid: {
-        // padding: `${theme.spacing.unit * 8}px 0`,
     },
 
     media: {
@@ -101,9 +86,7 @@ class Shirt extends Component {
         const { classes } = this.props;
 
         return (
-            <Container
-            //  fluid
-            >
+            <Container>
 
                 <div className={classNames(classes.layout, classes.cardGrid)}>
                     <Grid
@@ -133,7 +116,8 @@ class Shirt extends Component {
                                             Added on: {moment(item.date).format('MM/DD/YY hh:mm A')}
                                         </Typography>
                                     </CardContent>
-                                    <CardActions className={classes.actions} disableActionSpacing>
+
+                                    {/* <CardActions className={classes.actions} disableActionSpacing> */}
                                         {/* <IconButton aria-label="Add to favorites">
                                             <FavoriteIcon />
                                         </IconButton> */}
@@ -153,8 +137,8 @@ class Shirt extends Component {
                                         {/* <Expand triggerParentUpdate={this.handleExpandClick }
                                         /> */}
 
-                                    </CardActions>
-                                    <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                                    {/* </CardActions> */}
+                                    {/* <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
                                         <CardContent>
                                             <Typography paragraph>
                                                 <p>Release Info: {item.release}</p>
@@ -162,7 +146,7 @@ class Shirt extends Component {
                                                 <p>Color: {item.color}</p>
                                             </Typography>
                                         </CardContent>
-                                    </Collapse>
+                                    </Collapse> */}
                                 </Card>
 
                             </Grid>

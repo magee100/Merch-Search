@@ -3,9 +3,3 @@ module.exports = {
     User: require("./user")
     
 };
-
-// const db = {};
-
-// db.user = require('./user.js');
-
-// module.exports = db;

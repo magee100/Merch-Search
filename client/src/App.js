@@ -3,13 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Archive from "./pages/Archive";
 import NewItems from "./pages/FrontPage";
 import Navbar from "./components/Navbar/navbar";
-import IndividualItems from "./pages/ItemPage";
-import userSignUp from "./components/Sign-Up-Btn/sign-up-btn"
-import userSignIn from "./components/Sign-In-Btn/sign-in-btn"
 import SingleItemPage from "./pages/ItemPage";
 import API from "./utils/API"
 import Footer from "./components/Footer/footer";
-
+import LoginPage from "./pages/LoginPage";
 class App extends Component {
     state = {
         isLoggedIn: false,
@@ -36,22 +33,21 @@ class App extends Component {
                     <Navbar/>
                     <Switch>
                         <Route exact path ="/userSignUp" render= {props => (
-                            isLoggedIn ? <NewItems/> : <userSignUp/>)} />
+                            isLoggedIn ? <NewItems/> : <LoginPage/>)} />
                         <Route exact path = "/userSignIn" render = {props => (
-                            isLoggedIn ? <NewItems/> : <userSignIn/>)}/>
+                            isLoggedIn ? <NewItems/> : <LoginPage/>)}/>
                         <Route exact path="/archive" render={props => (
-                            isLoggedIn ? <Archive/> : <userSignIn/>)} />
+                            isLoggedIn ? <Archive/> : <LoginPage/>)} />
                         <Route exact path="/" render={props => (
-                            isLoggedIn ? <NewItems/> : <userSignIn/>)} />
+                            isLoggedIn ? <NewItems/> : <LoginPage/>)} />
                         <Route exact path="/items/:id" render={props => (
-                            isLoggedIn ? <SingleItemPage id={props.match.params.id}/> : <userSignIn/>)} />
+                            isLoggedIn ? <SingleItemPage id={props.match.params.id}/> : <LoginPage/>)} />
                     </Switch>
                     <Footer/>
                 </div>
             </Router>
         )
     }
-
 }
 
 export default App;

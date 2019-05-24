@@ -1,6 +1,4 @@
-import React, { Fragment, 
-  // Component
- } from 'react';
+import React, { Fragment } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -20,10 +18,6 @@ const inputProps = {
 }
 
 const styles = theme => ({
-  // inputProps: {
-  //   fontSize: 10
-  // },
-
   ArtistControl: {
   },
 
@@ -43,22 +37,20 @@ const styles = theme => ({
 
   BrandControl: {
     width: 225,
-    // marginLeft: 55,
   },
-  
+
   ReleaseControl: {
     width: 200,
-    // marginLeft: 25,
   },
 
   PhotoControl: {
     width: 260,
     marginLeft: 25,
-    
+
   },
 
   dialogForm: {
-   
+
     paddingRight: 24,
     paddingLeft: 24,
     paddingBottom: 0,
@@ -109,7 +101,7 @@ class AddItemDialog extends React.Component {
     window.location.reload()
 
     this.state.item.photo = this.state.item.photo.split('\n');
-    
+
     API.saveItem(
       this.state.item
     )
@@ -117,7 +109,7 @@ class AddItemDialog extends React.Component {
       .then(this.setState({
         open: !this.state.open
       }))
-      
+
       .catch(err => console.log(err));
 
   };
@@ -141,18 +133,14 @@ class AddItemDialog extends React.Component {
       >
         <DialogTitle id="form-dialog-title">Add An Item</DialogTitle>
         <DialogContent
-        className={classes.dialogForm}
+          className={classes.dialogForm}
         >
           <DialogContentText>
             Fill out the form below and hit submit to add item to archive!
             </DialogContentText>
-
-            
-
           <form className={classes.container}
-          style = {{width: 520}}
+            style={{ width: 520 }}
           >
-
             <TextField
               label="Artist"
               value={artist}
@@ -161,25 +149,23 @@ class AddItemDialog extends React.Component {
               classNames={classes.ArtistControl}
               variant="filled"
               helperText="*Case Sensitive"
-              style = {{width: 280}}
+              style={{ width: 280 }}
             />
-
             <TextField
-            label="Item Type"
-            select
-            className={classes.TypeControl}
-            onChange={this.handleChange('type')}
-            variant="filled"
-            margin="normal"
-            value={type}
+              label="Item Type"
+              select
+              className={classes.TypeControl}
+              onChange={this.handleChange('type')}
+              variant="filled"
+              margin="normal"
+              value={type}
             >
-            {types.map(type =>
-                  <MenuItem
+              {types.map(type =>
+                <MenuItem
                   value={type}>{type}</MenuItem>
-                )}
+              )}
             </TextField>
-
-         <TextField
+            <TextField
               label="Description"
               value={desc}
               variant="filled"
@@ -187,7 +173,6 @@ class AddItemDialog extends React.Component {
               margin="normal"
               className={classes.DescControl}
             />
-
             <TextField
               label="Color"
               value={color}
@@ -196,7 +181,6 @@ class AddItemDialog extends React.Component {
               variant="filled"
               className={classes.ColorControl}
             />
-            
             <TextField
               label="Release Info"
               value={release}
@@ -205,11 +189,9 @@ class AddItemDialog extends React.Component {
               variant="filled"
               multiline
               helperText="*Year Released, tour/fest, limited quantity"
-             
               classNames={classes.ReleaseControl}
-              style = {{width: 280}}
+              style={{ width: 280 }}
             />
-
             <TextField
               label="Brand"
               value={brand}
@@ -219,11 +201,6 @@ class AddItemDialog extends React.Component {
               variant="filled"
               className={classes.BrandControl}
             />
-
-            
-
-            
-        
             <TextField
               label="Photo Link"
               placeholder="https://i.imgur.com/3sVR2eG.jpg"
@@ -236,9 +213,7 @@ class AddItemDialog extends React.Component {
               "* Indent to Add Mutiple Photo Links"
               inputProps={inputProps}
               className={classes.PhotoControl}
-
             />
-
           </form>
         </DialogContent>
         <DialogActions>

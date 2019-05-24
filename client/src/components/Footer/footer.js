@@ -1,6 +1,4 @@
-import React, {
-    Component 
-} from "react";
+import React, { Component } from "react";
 import { Container } from '../Grid/grid';
 import  "./footer.css"
 
