@@ -72,13 +72,12 @@ class UserBtn extends Component {
     })
     ;
   }
-// adding logout 
+// adding logout user
   handleLogoutSubmit = event => {
-    API.logOutUser({
-
-    }).then(result => {
+    API.logOutUser().then(result => {
       window.location.reload();
     })
+    ;
   }
 
 
@@ -143,6 +142,15 @@ class UserBtn extends Component {
           >
             Log in
             </Button>
+          
+          <Button
+            id = "logout-btn"
+            color="primary"
+            onClick ={this.handleLogoutSubmit}
+            >
+              Log Out
+            </Button>
+
         </DialogActions>
 
 
