@@ -1,9 +1,4 @@
-import React, {
-    Component
-} from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import classNames from 'classnames';
-import { Container } from "../Grid/grid";
+import React, { Component } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import classnames from 'classnames';
@@ -15,7 +10,6 @@ class Expand extends Component {
     render() {
         const { classes } = this.props;
         return (
-            // <Container>
                 <IconButton
                     onClick={this.props.triggerParentUpdate}
                     className={classnames(classes.expand, {
@@ -27,7 +21,6 @@ class Expand extends Component {
                 >
                     <ExpandMoreIcon />
                 </IconButton>
-            // </Container>
         )
     }
 }

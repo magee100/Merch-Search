@@ -9,10 +9,6 @@ import API from '../../utils/API';
 import { withStyles } from '@material-ui/core/styles';
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import "./style.css"
-// import API from "../../utils/API";
-// import DialogContentText from '@material-ui/core/DialogContentText';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
   dialogForm: {
@@ -97,17 +93,10 @@ class UserBtn extends Component {
         onClose={this.handleToggle}
         aria-labelledby="form-dialog-title"
       >
-
-<DialogTitle id="user-dialog-title1">
-          Create An Account!
-            </DialogTitle>
         <DialogTitle id="user-dialog-title2">User Login</DialogTitle>
         <DialogContent
           className={classes.dialogForm}
         >
-          {/* <DialogContentText id="user-dialog-info">
-            Fill out the form below and hit submit to add item to archive!
-            </DialogContentText> */}
           <form
             onSubmit={this.handleLoginSubmit}
             className={classes.container}
@@ -189,7 +178,7 @@ class UserBtn extends Component {
                 'aria-label': 'Description',
               }}
             />
-            <Input
+            {/* <Input
               placeholder="First Name"
               className={classes.input}
               inputProps={{
@@ -202,7 +191,7 @@ class UserBtn extends Component {
               inputProps={{
                 'aria-label': 'Description',
               }}
-            />
+            /> */}
 
           </form>
         </DialogContent>
