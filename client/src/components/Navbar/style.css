@@ -1,0 +1,37 @@
+#nav-title {
+    padding-left: 30px;
+}
+
+/* #search-bar {
+margin-left: 600px
+} */
+
+#add-item-btn {
+    margin-right: 20px  !important;
+}
+
+#accountCircle {
+    
+}
+
+/* a:any-link {
+    border: 1px solid blue;
+    color: orange;
+  } */
+  
+  /* WebKit browsers */
+  a:-webkit-any-link {
+    /* border: 1px solid blue; */
+    text-decoration: none;
+    color: inherit;
+    
+  }
+
+  #nav-title {
+    font-size: 30px;
+    color: white !important;
+    text-decoration: none;
+    font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+    letter-spacing: 1px;
+  }
+  
