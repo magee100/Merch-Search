@@ -1,10 +1,9 @@
 const router = require("express").Router();
 const itemController = require("../../controllers/itemController");
-const isAuthenticated = require("../../config/middleware/isAuthenticated");
 
 router
     .route("/")
-    .get(isAuthenticated, itemController.findNew)
+    .get(itemController.findNew)
     .post(itemController.addItem)
 
 router
