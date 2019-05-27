@@ -1,12 +1,8 @@
-import React, { Fragment, 
-  // Component
- } from 'react';
+import React, { Fragment } from 'react';
 import Button from '@material-ui/core/Button';
 import Storage from "@material-ui/icons/Storage";
 import { Link } from "react-router-dom";
-
 import "./style.css"
-
 
 class ArchiveBtn extends React.Component {
   state = {
@@ -18,7 +14,6 @@ class ArchiveBtn extends React.Component {
       open: !this.state.open
     })
   }
-
 
   render() {
     return <Fragment>

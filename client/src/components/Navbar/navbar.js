@@ -10,9 +10,6 @@ import AddItemDialog from "../Add-Item-Btn/add-item-btn"
 import UserBtn from "../User-Btn/user-btn"
 import ArchiveBtn from "../Archive-Btn/archive-btn"
 import { Link } from "react-router-dom";
-// import SearchIcon from '@material-ui/icons/Search';
-// import InputBase from '@material-ui/core/InputBase';
-
 const styles = theme => ({
   root: {
     width: '100%',
@@ -85,52 +82,22 @@ class PrimarySearchAppBar extends React.Component {
       <div className={classes.root}>
         <AppBar position="fixed">
           <Toolbar>
-
-
-
-
             <Typography id="nav-title" className={classes.title} variant="h6" color="inherit"
               noWrap
             >
               <Link
                 to="/"
                 variant="body1"
-
-
               >
-
                 Merch Search
-
               </Link>
             </Typography>
-
-
-{/* 
-            <div id="search-bar" className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-              />
-            </div> */}
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-
-
               <AddItemDialog />
-
               <ArchiveBtn />
-
               <UserBtn />
-
-
             </div>
-
           </Toolbar>
         </AppBar>
 

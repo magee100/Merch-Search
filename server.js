@@ -25,21 +25,9 @@ if (process.env.NODE_ENV === "production") {
 
 // Add routes, both API and view
 require('./routes/api/api-routes')(app);
+
 app.use(routes);
 
-// requiring our routes
-// require("../routes/api/api-routes.js")(app);
-// require("../routes/api/html-routes.js")(app);
-// Connect to the Mongo DB
-
-// Syncing our databse and logging a message to the user uponse success 
-// db.mongoose.sync().then(function(){
-//   app.listen(PORT, function() {
-//     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-//   });
-// });
-
-
-  app.listen(PORT, function() {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-  });
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});

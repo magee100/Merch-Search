@@ -12,11 +12,7 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-import DeleteIcon from '@material-ui/icons/Delete';
-import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -51,7 +47,6 @@ const rows = [
     { id: 'artist', numeric: false, disablePadding: false, label: 'Artist' },
     { id: 'type', numeric: false, disablePadding: false, label: 'Type' },
     { id: 'desc', numeric: false, disablePadding: false, label: 'Description' },
-    // { id: 'release', numeric: false, disablePadding: false, label: 'Release Info' },
     { id: 'color', numeric: false, disablePadding: false, label: 'Color' },
     { id: 'brand', numeric: false, disablePadding: false, label: 'Brand' },
 ];
@@ -62,23 +57,11 @@ class EnhancedTableHead extends React.Component {
     };
 
     render() {
-        const { onSelectAllClick, order, orderBy, numSelected, rowCount, classes } = this.props;
+        const { order, orderBy } = this.props;
 
         return (
-            <TableHead
-            
-            >
-                <TableRow
-                
-                // className={classes.sortBar}
-                >
-                    {/* <TableCell padding="checkbox">
-                        <Checkbox
-                            indeterminate={numSelected > 0 && numSelected < rowCount}
-                            checked={numSelected === rowCount}
-                            onChange={onSelectAllClick}
-                        />
-                    </TableCell> */}
+            <TableHead>
+                <TableRow>
                     {rows.map(
                         row => (
                             <TableCell
@@ -171,21 +154,6 @@ let EnhancedTableToolbar = props => {
                     )}
             </div>
             <div className={classes.spacer} />
-            {/* <div className={classes.actions}>
-                {numSelected > 0 ? (
-                    <Tooltip title="Delete">
-                        <IconButton aria-label="Delete">
-                            <DeleteIcon />
-                        </IconButton>
-                    </Tooltip>
-                ) : (
-                        <Tooltip title="Filter list">
-                            <IconButton aria-label="Filter list">
-                                <FilterListIcon />
-                            </IconButton>
-                        </Tooltip>
-                    )}
-            </div> */}
         </Toolbar>
     );
 };
@@ -200,12 +168,10 @@ EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
 const styles = theme => ({
     root: {
         width: '100%',
-        // marginTop: theme.spacing.unit * 3,
         marginTop: 90
     },
     table: {
         minWidth: 1020,
-        // marginTop: 500,
     },
     tableWrapper: {
         overflowX: 'auto',
@@ -254,27 +220,6 @@ class EnhancedTable extends React.Component {
         this.setState({ selected: [] });
     };
 
-    // handleClick = (event, id) => {
-    //     const { selected } = this.state;
-    //     const selectedIndex = selected.indexOf(id);
-    //     let newSelected = [];
-
-    //     if (selectedIndex === -1) {
-    //         newSelected = newSelected.concat(selected, id);
-    //     } else if (selectedIndex === 0) {
-    //         newSelected = newSelected.concat(selected.slice(1));
-    //     } else if (selectedIndex === selected.length - 1) {
-    //         newSelected = newSelected.concat(selected.slice(0, -1));
-    //     } else if (selectedIndex > 0) {
-    //         newSelected = newSelected.concat(
-    //             selected.slice(0, selectedIndex),
-    //             selected.slice(selectedIndex + 1),
-    //         );
-    //     }
-
-    //     this.setState({ selected: newSelected });
-    // };
-
     handleChangePage = (event, page) => {
         this.setState({ page });
     };
@@ -312,16 +257,9 @@ class EnhancedTable extends React.Component {
                                     return (
                                         <TableRow
                                             hover
-                                            // onClick={event => this.handleClick(event, item._id)}
-                                            // role="checkbox"
-                                            // aria-checked={isSelected}
                                             tabIndex={-1}
                                             key={item._id}
-                                            // selected={isSelected}
                                         >
-                                            {/* <TableCell padding="checkbox">
-                                                <Checkbox checked={isSelected} />
-                                            </TableCell> */}
                                             <TableCell align="left">
                                                 <Lightbox images={item.photo} />
                                             </TableCell>
@@ -331,10 +269,6 @@ class EnhancedTable extends React.Component {
                                             <TableCell align="left">
                                                 <Link to={"/items/" + item._id}>{item.desc}</Link>
                                             </TableCell>
-
-
-
-                                            {/* <TableCell align="left">{item.release}</TableCell> */}
                                             <TableCell align="left">{item.color}</TableCell>
                                             <TableCell align="left">{item.brand}</TableCell>
                                         </TableRow>
